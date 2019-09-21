@@ -1,0 +1,3 @@
+description_homepage:
+    path:     /ok
+    defaults: { _controller: DescriptionBundle:Default:index }

@@ -1,0 +1,44 @@
+{% extends "UserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block fos_user_content %}
+<div class="login-content">
+
+    <div class="login-wrapp">
+
+        <div class="img-login-center">
+
+            <img src="{{ asset('fos/images/dashboard.png') }}" alt="logo" />
+
+        </div>
+
+        <h3>Se Connecter</h3>
+        <hr>
+
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+
+        <div class="social-list">
+
+            <ul>
+                {#
+                <a href="{{ path('facebook') }}"><li class="fb"><img src="{{ asset('images/social/soc1.png') }}" /></li></a>
+                <a href="{{ path('twitter') }}"><li class="tw"><img src="{{ asset('images/social/soc2.png') }}" /></li></a>
+                <a href="{{ path('google') }}"><li class="google"><img src="{{ asset('images/social/soc3.png') }}" /></li></a>
+                <a href="{{ path('linkedin') }}"><li class="in"><img src="{{ asset('images/social/soc4.png') }}" /></li></a>
+                #}
+
+                <li class="fb"><a href="https://www.facebook.com/jobid.fr/"><img src="{{ asset('fos/images/social/soc1.png') }}" /></a></li>
+
+                <li class="tw"><a href="#"><img src="{{ asset('fos/images/social/soc2.png') }}" /></a></li>
+
+                <li class="google"><a href="#"><img src="{{ asset('fos/images/social/soc3.png') }}" /></a></li>
+
+                <li class="in"><a href="https://www.linkedin.com/company/jobid-fr/"><img src="{{ asset('fos/images/social/soc4.png') }}" /></a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock fos_user_content %}

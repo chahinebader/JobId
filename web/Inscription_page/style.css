@@ -1,0 +1,436 @@
+/* style nav */
+.navigation{
+    background-color: #f5f5f1;
+    color: black;
+    height:115px;
+}
+.image a img{
+    margin: 27px 6px 6px 150px;
+    width: auto;
+    height: auto;
+}
+
+nav{
+    float: right;
+    margin: 35px 40px;
+
+}
+nav button{
+    padding: 5px;
+    margin: 5px 0 0 15px;
+    text-decoration: none;
+    color: black;
+    border-style: none;
+    background: #f5f5f1;
+    font-size: 12px;
+    font-weight: bold;
+}
+nav button:hover {
+    background: #076afd;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+.btn{
+    margin: 0 0 5px 0;
+    margin-left: 15px;
+
+}
+nav .btn:hover {
+    background: #076afd;
+    color: #ffffff;
+    border-radius: 3px;
+}
+nav .btn {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    width: 616px;
+    height: 696px;
+    text-align: center;
+}
+
+@media (max-width: 616px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.vous {
+    font-family: "Montserrat";
+    color: #444444;
+    font-size: 19pt;
+}
+.on_select_button_client {
+    background: #076afd;
+    color: white;
+}
+.on_select_button_freelancer {
+    background: #076afd;
+    color: white;
+}
+
+
+
+.butn {
+    border-width: 1px;
+    padding: 0;
+    font-size: 17pt;
+    margin-bottom: 20px;
+    font-family: "Montserrat"
+}
+
+.client {
+    background: white;
+    border-color: #076afd;
+    color: #076afd;
+    width: 234px;
+    height: 42px;
+    margin-right: 44px;
+}
+
+.client:hover {
+    background: #076afd;
+    color: white;
+}
+
+.freelancer {
+    border-radius: 0.5px;
+    width: 234px;
+    height: 42px;
+    background-color: #076afd;
+    color: white;
+}
+
+.freelancer:hover {
+    background: white;
+    border-color: #076afd;
+    color: #076afd;
+}
+
+.check {
+    font-family: "Montserrat";
+    color: #444444;
+    margin: 10px;
+}
+
+
+/* The container */
+
+.contain {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 45px;
+    cursor: pointer;
+    font-size: 11pt;
+    text-align: left;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.contain input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #eee;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.contain:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.contain input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.contain input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.contain .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.suivant {
+    background-color: #076afd;
+    color: white;
+    width: 102px;
+    height: 38px;
+    font-size: 14pt;
+    margin-top: 10px;
+}
+
+.suivant:hover {
+    background: white;
+    border-color: #076afd;
+    color: #076afd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+    font-family: 'Montserrat';
+}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones: */
+    img {
+        width: 100%;
+    }
+}
+
+
+#btn1{
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;"
+}
+
+a { text-decoration: none; color: black; /*par exemple*/ }
+
+/*.butn-client {
+    background: blue;
+    border-color: #076afd;
+    color: white;
+    width: 234px;
+    height: 42px;
+    margin-right: 44px;
+}
+
+.butn-freelancer {
+    background: white;
+    border-color: #076afd;
+    color: #076afd;
+    width: 234px;
+    height: 42px;
+    margin-right: 44px;
+}*/
+.butn-freelancer {
+    width: 30%;
+    display: inline-block;
+    background-color: #6b6bec;
+}
+.client {
+    width: 30%;
+    display: inline-block;
+    background-color: #9191ef;
+}
+
+
+#back{max-width:616px; margin-top:250px; margin-bottom:160px;}
+
+
+.on-diselected {
+    background: red;
+    color: #076afd;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .checkmark {
+        top: 17px;
+    }
+    .navigation {
+        margin: -9px;
+    }
+    .contain {
+        font-size: 14pt;
+    }
+    #back {
+        max-width: 616px;
+        margin-top: 123px;
+        margin-bottom: 160px;
+    }
+    #back img {
+        width: 615px;
+        height: 405px;
+    }
+    .center {
+        width: 655px;
+        height: 800px;
+        top: 45%;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    #back {
+        max-width: 400px;
+        margin-top: 123px;
+        margin-bottom: 160px;
+    }
+    #back img{
+        width: 400px;
+        height: 245px;
+    }
+    .checkmark {
+        top: 40px;
+    }
+    .center {
+        height: 755px;
+    }
+
+
+}
+@media screen and (max-width: 414px) {
+    #back img {
+        width: 400px;
+        height: 270px;
+    }
+    #back {
+        margin-top: 190px;
+    }
+    .center {
+        height: 755px;
+    }
+
+}
+@media screen and (max-width: 412px) {
+    #back img {
+        width: 400px;
+        height: 270px;
+    }
+    #back {
+        margin-top: 250px;
+    }
+    .center {
+        height: 755px;
+    }
+    .contain {
+        font-size: 12pt;
+    }
+
+}
+@media screen and (max-width: 411px) {
+    .checkmark {
+        top: 30px;
+    }
+
+}
+@media screen and (max-width: 375px) {
+    #back img {
+        width: 291px;
+        height: 180px;
+    }
+    #back {
+        max-width: 291px;
+    }
+    .contain {
+        font-size: 11pt;
+    }
+    .center {
+        height: 695px;
+    }
+    .checkmark {
+        top: 35px;
+    }
+
+}
+@media screen and (max-width: 360px) {
+
+    #back img {
+        width: 291px;
+        height: 220px;
+    }
+    #back {
+        max-width: 291px;
+        height: 720px;
+        margin-top: 265px;
+    }
+    .contain {
+        font-size: 10pt;
+        margin-top: 37px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #back {
+        margin-top: 255px;
+        height: 640px;
+    }
+    #back img {
+        width: 291px;
+        height: 170px;
+    }
+    .contain {
+        margin-left: 33px;
+        font-size: 10pt;
+    }
+    .center {
+        height: 640px;
+
+    }
+    .checkmark {
+        top: 25px;
+    }
+
+}

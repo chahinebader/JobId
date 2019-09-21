@@ -1,0 +1,122 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+body {
+  font-family: Arial,Helvetica, sans-serif;
+  color: #342F2F;
+  line-height: 20px;
+  font-size: 14px; }
+
+.header-bold {
+  font-weight: bold;
+}
+.creation-italique {
+  font-style: italic;
+  margin-top: 2%;
+}
+
+.wrap {
+  width: 709px;
+  margin: 0 auto;
+  width: 80% ;
+  margin-left: 12%;}
+
+.logo {
+  text-align: center;
+  padding: 35px 0;
+  background: url(img/top.png) left bottom no-repeat; }
+
+.content {
+  background: url(img/mid.png) repeat;
+  padding: 0 110px;
+  font-weight: 200;
+  margin-left: 10%;}
+  .content h1 {
+    color: #2a3c49;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Myriad Pro","FrutigerLT Black", sans-serif;
+    padding: 10px 0 25px 0; }
+  .content strong {
+    font-weight: bold; }
+  .content em {
+    font-style: italic; }
+  .content .bloc {
+
+    height: 85px;
+    background: url(img/number.png) no-repeat;
+    float: left;
+    padding-top: 30px;
+    text-align: center;
+    color: #767676;
+    margin-left: 10%;
+    background-color : #aaaa99;
+
+  }
+    .content .bloc strong {
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      color: #2a3c49;
+      margin-bottom: 15px;
+}
+  .content .last {
+    margin-right: 0px; }
+  .content .numbers {
+    overflow: hidden;
+    *zoom: 1;
+    padding: 40px 0;
+    width: 100%
+  }
+
+.footer {
+  background: url(img/bot.png) left top no-repeat;
+  padding-top: 30px;
+  overflow: hidden;
+  *zoom: 1; }

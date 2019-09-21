@@ -1,0 +1,1425 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html><!--<![endif]-->
+
+<!-- Specific Page Data -->
+<!-- End of Data -->
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!-- Mirrored from www.venmond.com/demo/vendroid/pages-user-profile.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Jul 2018 13:59:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+    <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, Vendroid" />
+    <meta name="description" content="User Profile Pages - Responsive Admin HTML Template">
+    <meta name="author" content="Venmond">
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('Profile/img/ico/apple-touch-icon-144-precomposed.html') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('Profile/img/ico/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('Profile/img/ico/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('Profile/img/ico/apple-touch-icon-57-precomposed.png') }}">
+    <link rel="shortcut icon" href="{{ asset('Profile/img/ico/favicon.png') }}">
+
+
+    <!-- CSS -->
+
+    <!-- Bootstrap & FontAwesome & Entypo CSS -->
+    <link href="{{ asset('Profile/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <link href="{{ asset('Profile/css/font-entypo.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Fonts CSS -->
+    <link href="{{ asset('Profile/css/fonts.css') }}"  rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="{{ asset('Profile/plugins/jquery-ui/jquery-ui.custom.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/prettyPhoto-plugin/css/prettyPhoto.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/isotope/css/isotope.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/pnotify/css/jquery.pnotify.css') }}" media="screen" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/google-code-prettify/prettify.css') }}" rel="stylesheet" type="text/css">
+
+
+    <link href="{{ asset('Profile/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/tagsInput/jquery.tagsinput.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/bootstrap-switch/bootstrap-switch.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/plugins/colorpicker/css/colorpicker.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Specific CSS -->
+
+
+    <!-- Theme CSS -->
+    <link href="{{ asset('Profile/css/theme.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('Profile/css/chrome.css') }}" rel="stylesheet" type="text/chrome"> <!-- chrome only css -->
+
+
+
+    <!-- Responsive CSS -->
+    <link href="{{ asset('Profile/css/theme-responsive.min.css') }}" rel="stylesheet" type="text/css">
+
+
+
+
+    <!-- for specific page in style css -->
+
+    <!-- for specific page responsive in style css -->
+
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('Profile/custom/custom.css') }}" rel="stylesheet" type="text/css">
+
+
+
+    <!-- Head SCRIPTS -->
+    <script type="text/javascript" src="{{ asset('Profile/js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('Profile/js/mobile-detect.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('Profile/js/mobile-detect-modernizr.js') }}"></script>
+
+
+
+
+
+
+
+
+</head>
+
+<body id="pages" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed      responsive    clearfix" data-active="pages "  data-smooth-scrolling="1">
+<div class="vd_body">
+    <!-- Header Start -->
+    <header class="header-1" id="header">
+        <div class="vd_top-menu-wrapper">
+            <div class="container ">
+                <div class="vd_top-nav vd_nav-width  ">
+                    <div class="vd_panel-header">
+                        <div class="logo">
+                            <a href="{{ path('homepage') }}"><img alt="logo" src="{{ asset('images/logo.png') }}"></a>
+                        </div>
+                        <!-- logo -->
+
+                        <div class="vd_panel-menu left-pos visible-sm visible-xs">
+
+                        <span class="menu" data-action="toggle-navbar-left">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </span>
+
+
+                        </div>
+                        <div class="vd_panel-menu visible-sm visible-xs">
+                	<span class="menu visible-xs" data-action="submenu">
+	                    <i class="fa fa-bars"></i>
+                    </span>
+
+
+
+                        </div>
+                        <!-- vd_panel-menu -->
+                    </div>
+                    <!-- vd_panel-header -->
+
+                </div>
+                <div class="vd_container">
+                    <div class="row">
+                        <div class="col-sm-5 col-xs-12">
+
+
+                        </div>
+                        <div class="col-sm-7 col-xs-12">
+                            <div class="vd_mega-menu-wrapper">
+                                <div class="vd_mega-menu pull-right">
+                                    <ul class="mega-ul">
+
+                                        <div class="vd_mega-menu-content  width-xs-3 width-sm-4  center-xs-3 left-sm" data-action="click-target">
+                                            <div class="child-menu">
+                                                <div class="title">
+                                                    Notifications
+                                                    <div class="vd_panel-menu">
+                     <span data-original-title="Notification Setting" data-toggle="tooltip" data-placement="bottom" class="menu">
+                        <i class="fa fa-cog"></i>
+                    </span>
+                                                        <!--                     <span class="text-menu" data-original-title="Settings" data-toggle="tooltip" data-placement="bottom">
+                                                                                Settings
+                                                                            </span> -->
+                                                    </div>
+                                                </div>
+                                                <div class="content-list">
+                                                    <div  data-rel="scroll">
+                                                        <ul  class="list-wrapper pd-lr-10">
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                                                                    <div class="menu-text"> Someone has give you a surprise
+                                                                        <div class="menu-info"><span class="menu-date">12 Minutes Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_blue"><i class=" fa fa-user"></i></div>
+                                                                    <div class="menu-text">  Change your user profile details
+                                                                        <div class="menu-info"><span class="menu-date">1 Hour 20 Minutes Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_red"><i class=" fa fa-cogs"></i></div>
+                                                                    <div class="menu-text">  Your setting is updated
+                                                                        <div class="menu-info"><span class="menu-date">12 Days Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_green"><i class=" fa fa-book"></i></div>
+                                                                    <div class="menu-text">  Added new article
+                                                                        <div class="menu-info"><span class="menu-date">19 Days Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_green"><img alt="example image" src="{{ asset('Profile/img/avatar/avatar.jpg') }}"></div>
+                                                                    <div class="menu-text">  Change Profile Pic
+                                                                        <div class="menu-info"><span class="menu-date">20 Days Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_red"><i class=" fa fa-cogs"></i></div>
+                                                                    <div class="menu-text">  Your setting is updated
+                                                                        <div class="menu-info"><span class="menu-date">12 Days Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_green"><i class=" fa fa-book"></i></div>
+                                                                    <div class="menu-text">  Added new article
+                                                                        <div class="menu-info"><span class="menu-date">19 Days Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+                                                            <li> <a href="#">
+                                                                    <div class="menu-icon vd_green"><img alt="example image" src="{{ asset('Profile/img/avatar/avatar.jpg') }}"></div>
+                                                                    <div class="menu-text">  Change Profile Pic
+                                                                        <div class="menu-info"><span class="menu-date">20 Days Ago</span></div>
+                                                                    </div>
+                                                                </a> </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <div class="closing text-center" style="">
+                                                        <a href="#">See All Notifications <i class="fa fa-angle-double-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- child-menu -->
+                                        </div>   <!-- vd_mega-menu-content -->
+                                        </li>
+
+                                        <li id="top-menu-profile" class="profile mega-li">
+                                            <a href="#" class="mega-link"  data-action="click-trigger">
+            <span  class="mega-image">
+                <img src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }} " alt="example image" />
+            </span>
+                                                <span class="mega-name">
+                {{ app.user.username }} <i class="fa fa-caret-down fa-fw"></i>
+            </span>
+                                            </a>
+                                            <div class="vd_mega-menu-content  width-xs-2  left-xs left-sm" data-action="click-target">
+                                                <div class="child-menu">
+                                                    <div class="content-list content-menu">
+                                                        <ul class="list-wrapper pd-lr-10">
+                                                            <li> <a href="{{ path('fos_user_profile_edit') }}"> <div class="menu-icon"><i class=" fa fa-user"></i></div> <div class="menu-text">Modifier Profile</div> </a> </li>
+                                                            <!--<li> <a href="#"> <div class="menu-icon"><i class=" fa fa-trophy"></i></div> <div class="menu-text">My Achievements</div> </a> </li>-->
+                                                            <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-envelope"></i></div> <div class="menu-text">Messages</div><div class="menu-badge"><div class="badge vd_bg-red">10</div></div> </a>  </li>
+                                                            <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-tasks"></i></div> <div class="menu-text"> Taches</div><div class="menu-badge"><div class="badge vd_bg-red">5</div></div> </a> </li>
+                                                            <li class="line"></li>
+                                                            <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-lock"></i></div> <div class="menu-text">Intimité</div> </a> </li>
+                                                            <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-cogs"></i></div> <div class="menu-text">Parametres</div> </a> </li>
+                                                            <!--<li> <a href="#"> <div class="menu-icon"><i class="  fa fa-key"></i></div> <div class="menu-text">Lock</div> </a> </li>-->
+                                                            <li> <a href="{{ path('fos_user_security_logout') }}"> <div class="menu-icon"><i class=" fa fa-sign-out"></i></div>  <div class="menu-text">Déconnection</div> </a> </li>
+                                                            <li class="line"></li>
+                                                            <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-question-circle"></i></div> <div class="menu-text">Aide</div> </a> </li>
+                                                            <li> <a href="#"> <div class="menu-icon"><i class=" glyphicon glyphicon-bullhorn"></i></div> <div class="menu-text">Signaler un problème</div> </a> </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+
+                                    </ul>
+                                    <!-- Head menu search form ends -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- container -->
+        </div>
+        <!-- vd_primary-menu-wrapper -->
+
+    </header>
+    <!-- Header Ends -->
+    <div class="content">
+        <div class="container">
+            <div class="vd_navbar vd_nav-width vd_navbar-tabs-menu vd_navbar-left  ">
+
+                <div class="navbar-menu clearfix">
+                    <div class="vd_panel-menu hidden-xs">
+            <span data-original-title="Expand All" data-toggle="tooltip" data-placement="bottom" data-action="expand-all" class="menu" data-intro="<strong>Expand Button</strong><br/>To expand all menu on left navigation menu." data-step=4 >
+                <i class="fa fa-sort-amount-asc"></i>
+            </span>
+                    </div>
+                    <h3 class="menu-title hide-nav-medium hide-nav-small"></h3>
+                    <div class="vd_menu">
+                        <ul>
+
+
+
+                            <li>
+                                <a href="{{ path('fos_user_profile_show') }}">
+                                    <span class="menu-icon"><i class="fa fa-user"></i></span>
+                                    <span class="menu-text">Mon Profile</span>
+                                    <span class="menu-badge"><span class="badge vd_bg-red"><i class="fa fa-exclamation"></i></span></span>
+                                </a>
+                            </li>
+                            <!--
+                            <li>
+                                <a href="#">
+                                    <span class="menu-icon"><i class="fa fa-folder"></i></span>
+                                    <span class="menu-text">Projets</span>
+                                    <span class="menu-badge"><span class="badge vd_bg-red"><i class="fa fa-exclamation"></i></span></span>
+                                </a>
+                            </li>
+                            -->
+
+
+                            <li>
+                                <a href="#">
+                                    <span class="menu-icon"><i class="fa fa-user"></i></span>
+                                    <span class="menu-text">Portfolio</span>
+                                    <span class="menu-badge"><span class="badge vd_bg-red"><i class="fa fa-exclamation"></i></span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="menu-icon"><i class="fa fa-envelope"></i></span>
+                                    <span class="menu-text">Messages</span>
+                                    <span class="menu-badge"><span class="badge vd_bg-red"><i class="fa fa-exclamation"></i></span></span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!-- Head menu search form ends -->         </div>
+                </div>
+                <div class="navbar-spacing clearfix">
+                </div>
+                <!--
+                <div class="vd_menu vd_navbar-bottom-widget">
+                    <ul>
+                        <li>
+                            <a href="pages-logout.html">
+                                <span class="menu-icon"><i class="fa fa-sign-out"></i></span>
+                                <span class="menu-text">Logout</span>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+                -->
+            </div>
+            <div class="vd_navbar vd_nav-width vd_navbar-chat vd_bg-black-80 vd_navbar-right   ">
+
+                <div class="navbar-menu clearfix">
+                    <div class="content-list content-image content-chat">
+                        <ul class="list-wrapper no-bd-btm pd-lr-10">
+                            <li class="group-heading vd_bg-black-20">FAVORITE</li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Jessylin
+                                        <div class="menu-info">
+                                            <span class="menu-date">Administrator </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="badge status vd_bg-green">&nbsp;</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-2.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Rodney Mc.Cardo
+                                        <div class="menu-info">
+                                            <span class="menu-date">Designer </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="badge status vd_bg-grey">&nbsp;</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-3.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Theresia Minoque
+                                        <div class="menu-info">
+                                            <span class="menu-date">Engineering </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="badge status vd_bg-green">&nbsp;</span></div>
+                                </a>
+                            </li>
+                            <!--
+                            <li class="group-heading vd_bg-black-20">FRIENDS</li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{##}{ asset('Profile/img/avatar/avatar-4.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Greg Grog
+                                        <div class="menu-info">
+                                            <span class="menu-date">Developer </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="badge status vd_bg-grey">&nbsp;</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{##}{ asset('Profile/img/avatar/avatar-5.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Stefanie Imburgh
+                                        <div class="menu-info">
+                                            <span class="menu-date">Dancer</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="vd_grey font-sm"><i class="fa fa-mobile"></i></span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{##}{ asset('Profile/img/avatar/avatar-6.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Matt Demon
+                                        <div class="menu-info">
+                                            <span class="menu-date">Musician </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="vd_grey font-sm"><i class="fa fa-mobile"></i></span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{##}{ asset('Profile/img/avatar/avatar-7.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Jeniffer Anastasia
+                                        <div class="menu-info">
+                                            <span class="menu-date">Senior Developer </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="badge status vd_bg-green">&nbsp;</span></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="menu-icon"><img src="{##}{ asset('Profile/img/avatar/avatar-8.jpg') }}" alt="example image"></div>
+                                    <div class="menu-text">Daniel Dreamon
+                                        <div class="menu-info">
+                                            <span class="menu-date">Sales Executive </span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-badge"><span class="badge status vd_bg-green">&nbsp;</span></div>
+                                </a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="navbar-spacing clearfix">
+                </div>
+            </div>
+            <!-- Middle Content Start -->
+
+            <div class="vd_content-wrapper">
+                <div class="vd_container">
+                    <div class="vd_content clearfix">
+                        <div class="vd_head-section clearfix">
+
+                        </div>
+                        <!--
+                        <div class="vd_title-section clearfix">
+                            <div class="vd_panel-header no-subtitle">
+                                <h1>User Profile Page</h1>
+                            </div>
+                        </div>
+                        -->
+                        <div class="vd_content-section clearfix">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="panel widget light-widget panel-bd-top">
+                                        <div class="panel-heading no-title"> </div>
+                                        <div class="panel-body">
+                                            <div class="text-center vd_info-parent">
+                                                {% if app.user.brochure == null %}
+                                                    <img src="{{ asset('profile/img/avatar/default.png')  }}" >
+                                                {% else %}
+                                                    <img src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }} ">
+                                                {% endif %}
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12"> <a class="btn vd_btn vd_bg-green btn-xs btn-block no-br"><i class="fa fa-check-circle append-icon" ></i>Friends</a> </div>
+                                                <div class="col-xs-12"> <a class="btn vd_btn vd_bg-grey btn-xs btn-block no-br"><i class="fa fa-envelope append-icon"></i>Send Message</a> </div>
+                                            </div>
+                                            <h2 class="font-semibold mgbt-xs-5">{{ app.user.username }}</h2>
+                                            <h4>Societé..</h4>
+                                            <p>Bio...</p>
+                                            <div class="mgtp-20">
+                                                <table class="table table-striped table-hover">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td style="width:60%;">Statut</td>
+                                                        <td><span class="label label-success">Active</span></td>
+                                                    </tr>
+                                                    <!--
+                                                    <tr>
+                                                        <td>User Rating</td>
+                                                        <td><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i></td>
+                                                    </tr>
+                                                    -->
+                                                    <tr>
+                                                        <td>Membre depuis</td>
+                                                        <td> Jan 07, 2014 </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- panel widget -->
+                                    <!--
+                                    <div class="panel widget light-widget">
+                                        <div class="panel-body-list">
+                                            <h3 class="pd-20 mgbt-xs-0"><i class="fa fa-users mgr-10"></i>Friends</h3>
+                                            <div class="content-grid column-xs-2 column-sm-3 height-xs-auto mgbt-xs-20">
+                                                <div>
+                                                    <ul class="list-wrapper">
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar.jpg') }}"></span> </a> </li>
+                                                        <li class="warning"> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-2.jpg') }}"></span> </a> </li>
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-3.jpg') }}"></span> </a> </li>
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-4.jpg') }}"></span> </a> </li>
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-5.jpg') }}"></span> </a> </li>
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-6.jpg') }}"></span> </a> </li>
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-7.jpg') }}"></span> </a> </li>
+                                                        <li> <a href="#"> <span class="menu-icon"><img alt="example image" src="{##}{ asset('Profile/img/avatar/avatar-8.jpg') }}"></span> </a> </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="closing text-center" style=""> <a href="#">See All Friends<i class="fa fa-angle-double-right prepend-icon"></i></a> </div>
+                                        </div>
+                                    </div>
+                                    -->
+                                    <!-- panel widget -->
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="tabs widget">
+                                        <ul class="nav nav-tabs widget">
+                                            <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <!--
+                                              <li> <a data-toggle="tab" href="#projects-tab"> Projects <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <li> <a data-toggle="tab" href="#photos-tab"> Photos <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <li> <a data-toggle="tab" href="#friends-tab"> Friends <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <li> <a data-toggle="tab" href="#groups-tab"> Groups <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                              -->
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="profile-tab" class="tab-pane active">
+                                                <div class="pd-20">
+                                                    <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow" href="{{ path('fos_user_profile_edit') }}"> <i class="fa fa-pencil append-icon"></i> Modifier </a> </div>
+                                                    <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="icon-user mgr-10 profile-icon"></i> Information Personnel</h3>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Nom:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.nom }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Prenom:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.prenom }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Psoeudo:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.username }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Address mail:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.email }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Pays:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.pays }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Ville:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.ville }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">SIRET:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.siret }}</div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+                                                                                                                <div class="col-sm-6">
+                                                                                                                    <div class="row mgbt-xs-0">
+                                                                                                                        <label class="col-xs-5 control-label">Interests:</label>
+                                                                                                                        <div class="col-xs-7 controls">Basketball, Web, Design, etc.</div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="col-sm-6">
+                                                                                                                    <div class="row mgbt-xs-0">
+                                                                                                                        <label class="col-xs-5 control-label">Website:</label>
+                                                                                                                        <div class="col-xs-7 controls"><a href="http://vendroid.venmond.com/">Vendroid.venmond.com</a></div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                -->
+                                                        <div class="col-sm-6">
+                                                            <div class="row mgbt-xs-0">
+                                                                <label class="col-xs-5 control-label">Téléphone:</label>
+                                                                <div class="col-xs-7 controls">{{ app.user.telephone }}</div>
+                                                                <!-- col-sm-10 -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
+                                                    <hr class="pd-10"  />
+                                                    <div class="row">
+                                                        <div class="col-sm-7 mgbt-xs-20">
+                                                            <h3 class="mgbt-xs-15 font-semibold"><i class="fa fa-file-text-o mgr-10 profile-icon"></i> EXPERIENCE</h3>
+                                                            <div class="content-list content-menu">
+                                                                <ul class="list-wrapper">
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_green"><i class="fa  fa-circle-o"></i></span> <span class="menu-text"> <a href="http://www.venmond.com/">Owner</a> at <a href="http://www.venmond.com/">Vendroid Ltd.</a> <span class="menu-info"><span class="menu-date"> March 2013 ~ Now</span></span> </span> </li>
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_grey"><i class=" fa  fa-circle-o"></i></span> <span class="menu-text"> <a href="http://www.venmond.com/">CEO</a> at <a href="http://www.venmond.com/">Mc. Dondon</a> <span class="menu-info"><span class="menu-date"> March 2011 ~ February 2013</span></span> </span> </li>
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_grey"><i class=" fa  fa-circle-o"></i></span> <span class="menu-text"> <a href="http://www.venmond.com/">Web Designer</a> at <a href="http://www.venmond.com/">Web Design Company Ltd.</a> <span class="menu-info"><span class="menu-date"> March 2010 ~ February 2011</span></span> </span> </li>
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_grey"><i class=" fa  fa-circle-o"></i></span> <span class="menu-text"> <a href="http://www.venmond.com/">Sales</a> at <a href="http://www.venmond.com/">Sales Company Ltd.</a> <span class="menu-info"><span class="menu-date"> March 2009 ~ February 2010</span></span> </span> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <h3 class="mgbt-xs-15 font-semibold"><i class="fa fa-trophy mgr-10 profile-icon"></i> EDUCATION</h3>
+                                                            <div class="content-list content-menu">
+                                                                <ul class="list-wrapper">
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_green"><i class="fa  fa-circle-o"></i></span> <span class="menu-text"> Bachelor's degree, E-Commerce/Electronic Commerce at <a href="http://www.venmond.com/">UCLA</a> <span class="menu-info"><span class="menu-date"> August 2003 ~ July 2008</span></span> </span> </li>
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_grey"><i class=" fa  fa-circle-o"></i></span> <span class="menu-text"> Student at <a href="http://www.venmond.com/">Web Design Education</a> <span class="menu-info"><span class="menu-date"> March 2006 ~ February 2007</span></span> </span> </li>
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_grey"><i class=" fa  fa-circle-o"></i></span> <span class="menu-text"> Student at <a href="http://www.venmond.com/">St. Louis High School</a> <span class="menu-info"><span class="menu-date"> August 2000 ~ July 2003 </span></span> </span> </li>
+                                                                    <li class="mgbt-xs-10"> <span class="menu-icon vd_grey"><i class=" fa  fa-circle-o"></i></span> <span class="menu-text"> Student at <a href="http://www.venmond.com/">St. Monica Junior High School</a> <span class="menu-info"><span class="menu-date"> August 1998 ~ July 2000</span></span> </span> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    -->
+                                                    <hr class="pd-10"  />
+                                                    <!--
+                                                    <div class="row">
+                                                        <div class="col-sm-7">
+                                                            <h3 class="mgbt-xs-15 font-semibold"><i class="fa fa-globe mgr-10 profile-icon"></i> ACTIVITY</h3>
+                                                            <div class="">
+                                                                <div class="content-list">
+                                                                    <div data-rel="scroll">
+                                                                        <ul  class="list-wrapper">
+                                                                            <li> <span class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></span> <span class="menu-text"> Someone has give you a surprise <span class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></span> </span>  </li>
+                                                                            <li> <span class="menu-icon vd_blue"><i class=" fa fa-user"></i></span> <span class="menu-text"> Change your user profile details <span class="menu-info"><span class="menu-date"> ~ 1 Hour 20 Minutes Ago</span></span> </span> </li>
+                                                                            <li> <span class="menu-icon vd_red"><i class=" fa fa-cogs"></i></span> <span class="menu-text"> Your setting is updated <span class="menu-info"><span class="menu-date"> ~ 12 Days Ago</span></span> </span></li>
+                                                                            <li>  <span class="menu-icon vd_green"><i class=" fa fa-book"></i></span> <span class="menu-text"> Added new article <span class="menu-info"><span class="menu-date"> ~ 19 Days Ago</span></span> </span>  </li>
+                                                                            <li>  <span class="menu-icon vd_green"><img alt="example image" src="{{ asset('Profile/img/avatar/avatar.jpg') }}"></span> <span class="menu-text"> Change Profile Pic <span class="menu-info"><span class="menu-date"> ~ 20 Days Ago</span></span> </span> </li>
+                                                                            <li>  <span class="menu-icon vd_red"><i class=" fa fa-cogs"></i></span> <span class="menu-text"> Your setting is updated <span class="menu-info"><span class="menu-date"> ~ 12 Days Ago</span></span> </span>  </li>
+                                                                            <li>  <span class="menu-icon vd_green"><i class=" fa fa-book"></i></span> <span class="menu-text"> Added new article <span class="menu-info"><span class="menu-date"> ~ 19 Days Ago</span></span> </span> </li>
+                                                                            <li>  <span class="menu-icon vd_green"><img alt="example image" src="{{ asset('Profile/img/avatar/avatar.jpg') }}"></span> <span class="menu-text"> Change Profile Pic <span class="menu-info"><span class="menu-date"> ~ 20 Days Ago</span></span> </span>  </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="closing text-center" style=""> <a href="#">See All Activities <i class="fa fa-angle-double-right"></i></a> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <h3 class="mgbt-xs-15 font-semibold"><i class="fa fa-flask mgr-10 profile-icon"></i> SKILL</h3>
+                                                            <div class="skill-list">
+                                                                <div class="skill-name"> Photoshop </div>
+                                                                <div class="progress  progress-sm">
+                                                                    <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success "> <span class="sr-only">90%</span> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="skill-list">
+                                                                <div class="skill-name"> Illustrator </div>
+                                                                <div class="progress  progress-sm">
+                                                                    <div style="width: 20%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-danger "> <span class="sr-only">20%</span> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="skill-list">
+                                                                <div class="skill-name"> PHP </div>
+                                                                <div class="progress  progress-sm">
+                                                                    <div style="width: 50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" class="progress-bar progress-bar-warning "> <span class="sr-only">50% Complete</span> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="skill-list">
+                                                                <div class="skill-name"> Javascript </div>
+                                                                <div class="progress  progress-sm">
+                                                                    <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-info "> <span class="sr-only">60% Complete</span> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="skill-list">
+                                                                <div class="skill-name"> Communication </div>
+                                                                <div class="progress  progress-sm">
+                                                                    <div style="width: 95%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" role="progressbar" class="progress-bar progress-bar-success "> <span class="sr-only">95% Complete</span> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="skill-list">
+                                                                <div class="skill-name"> Writing </div>
+                                                                <div class="progress  progress-sm">
+                                                                    <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar progress-bar-warning "> <span class="sr-only">45% Complete</span> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                -->
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- pd-20 -->
+                                            </div>
+                                            <!-- home-tab -->
+
+                                            <div id="projects-tab" class="tab-pane">
+                                                <div class="pd-20">
+                                                    <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Project </a> </div>
+                                                    <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-bolt mgr-10 profile-icon"></i> PROJECTS</h3>
+                                                    <table class="table table-striped table-hover">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Logo / Photos</th>
+                                                            <th>Clients</th>
+                                                            <th>Start Date</th>
+                                                            <th>Status</th>
+                                                            <th>Revenue</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td><img height="80" src="{{ asset('Profile/img/avatar/avatar.jpg') }}" alt="example image"></td>
+                                                            <td>Zoe Corp </td>
+                                                            <td class="center">2010/02/03</td>
+                                                            <td class="center">
+                                                                <span class="label label-success">Finish</span>
+                                                            </td>
+                                                            <td class="center"><strong>$ 250</strong></td>
+                                                            <td class="menu-action rounded-btn">
+                                                                <a class="btn menu-icon vd_bg-green" data-placement="top" data-toggle="tooltip" data-original-title="view">
+                                                                    <i class="fa fa-eye"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-yellow" data-placement="top" data-toggle="tooltip" data-original-title="edit">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-red" data-placement="top" data-toggle="tooltip" data-original-title="delete">
+                                                                    <i class="fa fa-times"></i>
+                                                                </a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td><img height="80" src="{{ asset('Profile/img/avatar/avatar-2.jpg') }}" alt="example image"></td>
+                                                            <td>Zoe Corp </td>
+                                                            <td class="center">2010/02/03</td>
+                                                            <td class="center">
+                                                                <span class="label label-success">Finish</span>
+                                                            </td>
+                                                            <td class="center"><strong>$ 250</strong></td>
+                                                            <td class="menu-action rounded-btn">
+                                                                <a class="btn menu-icon vd_bg-green" data-placement="top" data-toggle="tooltip" data-original-title="view">
+                                                                    <i class="fa fa-eye"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-yellow" data-placement="top" data-toggle="tooltip" data-original-title="edit">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-red" data-placement="top" data-toggle="tooltip" data-original-title="delete">
+                                                                    <i class="fa fa-times"></i>
+                                                                </a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td><img height="80" src="{{ asset('Profile/img/avatar/avatar-3.jpg') }}" alt="example image"></td>
+                                                            <td>Zoe Corp </td>
+                                                            <td class="center">2010/02/03</td>
+                                                            <td class="center">
+                                                                <span class="label label-success">Finish</span>
+                                                            </td>
+                                                            <td class="center"><strong>$ 250</strong></td>
+                                                            <td class="menu-action rounded-btn">
+                                                                <a class="btn menu-icon vd_bg-green" data-placement="top" data-toggle="tooltip" data-original-title="view">
+                                                                    <i class="fa fa-eye"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-yellow" data-placement="top" data-toggle="tooltip" data-original-title="edit">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-red" data-placement="top" data-toggle="tooltip" data-original-title="delete">
+                                                                    <i class="fa fa-times"></i>
+                                                                </a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td><img height="80" src="{{ asset('Profile/img/avatar/avatar-4.jpg') }}" alt="example image"></td>
+                                                            <td>Zoe Corp </td>
+                                                            <td class="center">2010/02/03</td>
+                                                            <td class="center">
+                                                                <span class="label label-success">Finish</span>
+                                                            </td>
+                                                            <td class="center"><strong>$ 250</strong></td>
+                                                            <td class="menu-action rounded-btn">
+                                                                <a class="btn menu-icon vd_bg-green" data-placement="top" data-toggle="tooltip" data-original-title="view">
+                                                                    <i class="fa fa-eye"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-yellow" data-placement="top" data-toggle="tooltip" data-original-title="edit">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-red" data-placement="top" data-toggle="tooltip" data-original-title="delete">
+                                                                    <i class="fa fa-times"></i>
+                                                                </a>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td><img height="80" src="{{ asset('Profile/img/avatar/avatar-5.jpg') }}" alt="example image"></td>
+                                                            <td>Zoe Corp </td>
+                                                            <td class="center">2010/02/03</td>
+                                                            <td class="center">
+                                                                <span class="label label-success">Finish</span>
+                                                            </td>
+                                                            <td class="center"><strong>$ 250</strong></td>
+                                                            <td class="menu-action rounded-btn">
+                                                                <a class="btn menu-icon vd_bg-green" data-placement="top" data-toggle="tooltip" data-original-title="view">
+                                                                    <i class="fa fa-eye"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-yellow" data-placement="top" data-toggle="tooltip" data-original-title="edit">
+                                                                    <i class="fa fa-pencil"></i>
+                                                                </a>
+                                                                <a class="btn menu-icon vd_bg-red" data-placement="top" data-toggle="tooltip" data-original-title="delete">
+                                                                    <i class="fa fa-times"></i>
+                                                                </a>
+
+                                                            </td>
+                                                        </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="photos-tab" class="tab-pane">
+                                                <div class="pd-20">
+                                                    <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-plus append-icon"></i> Add Photo </a> </div>
+                                                    <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-picture-o mgr-10 profile-icon"></i> PHOTOS</h3>
+                                                    <ul id="filters" class="nav nav-pills">
+                                                        <li class="active"><a  href="#photos-1" data-filter="*">All</a></li>
+                                                        <li><a  href="#photos-2" data-filter=".filter-1">Photos of You</a></li>
+                                                        <li><a  href="#photos-3" data-filter=".filter-2">Scenery</a></li>
+                                                        <li><a  href="#photos-4" data-filter=".filter-3">Vacation</a></li>
+                                                    </ul>
+                                                    <br/>
+                                                    <div class="isotope js-isotope vd_gallery">
+                                                        <div class="gallery-item  filter-1">
+                                                            <a href="{{ asset('Profile/img/photos/01.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/01.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Felicious</span> de louis amigos</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/01.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-2">
+                                                            <a href="{{ asset('Profile/img/photos/03.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/03.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Sola</span> Aprecios</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/03.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="gallery-item  filter-2">
+                                                            <a href="{{ asset('Profile/img/photos/08.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/08.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Lorem</span> ipsum</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/08.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-3">
+                                                            <a href="{{ asset('Profile/img/photos/15.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/15.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Doler</span> sit amet</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/15.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-1">
+                                                            <a href="{{ asset('Profile/img/photos/02.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/02.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Gracias</span> mundo</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/02.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-2">
+                                                            <a href="{{ asset('Profile/img/photos/06.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/06.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Solero</span> dorona</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/06.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-3">
+                                                            <a href="{{ asset('Profile/img/photos/08.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/08.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Weinto</span> grametto</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/08.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-2">
+                                                            <a href="{{ asset('Profile/img/photos/04.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/04.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Sara</span> he yaso</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/04.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-1">
+                                                            <a href="{{ asset('Profile/img/photos/10.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/10.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Numero</span> uno</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/10.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+
+
+                                                        </div>
+
+                                                        <div class="gallery-item   filter-3">
+                                                            <a href="{{ asset('Profile/img/photos/09.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/09.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Beon</span> dukim</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/09.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gallery-item  filter-2">
+                                                            <a href="{{ asset('Profile/img/photos/01.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/01.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Gretia</span> de louis amigos</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/01.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-1">
+                                                            <a href="{{ asset('Profile/img/photos/11.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/11.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Title</span> de koko</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/11.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-1">
+                                                            <a href="{{ asset('Profile/img/photos/12.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/12.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Some</span> random text</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/12.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-3">
+                                                            <a href="{{ asset('Profile/img/photos/13.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/13.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Soleram</span> drago</h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/13.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="gallery-item  filter-2">
+                                                            <a href="{{ asset('Profile/img/photos/14.jpg') }}" data-rel="prettyPhoto[2]">
+                                                                <img alt="example image" src="{{ asset('Profile/img/photos/14.jpg') }}">
+                                                                <div class="bg-cover"></div>
+                                                            </a>
+                                                            <div class="vd_info">
+                                                                <h3 class="mgbt-xs-15"><span class="font-semibold">Gretia</span> de louis </h3>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="{{ asset('Profile/img/photos/14.jpg') }}" data-rel="prettyPhoto[1]"><i class="fa fa-search"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-thumbs-up"></i></a>
+                                                                <a class="vd_bg-green vd_white mgr-10 btn vd_round-btn btn-xs" role="button" href="#"><i class="fa fa-comments"></i></a>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="clearfix"></div>
+
+                                                </div>
+                                                <!-- pd-20 -->
+                                            </div> <!-- photos tab -->
+                                            <div id="friends-tab" class="tab-pane">
+                                                <div class="pd-20">
+                                                    <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-users mgr-10 profile-icon"></i> FRIENDS</h3>
+                                                    <ul class="nav nav-pills">
+                                                        <li class="active"><a href="#photos-1" data-toggle="tab">Friends</a></li>
+                                                        <li><a href="#photos-2" data-toggle="tab">Pending Request</a></li>
+                                                        <li><a href="#photos-3" data-toggle="tab">Blacklisted</a></li>
+                                                    </ul>
+                                                    <div class="content-grid column-xs-3 column-sm-4 column-md-4 column-lg-6 height-xs-4 mgbt-xs-20">
+                                                        <div>
+                                                            <ul class="list-wrapper">
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text"> Gabriella Montagna
+                            <span class="menu-info">
+                                <span class="menu-date">San Diego</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+                                                                <li class="warning">
+                                                                    <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-2.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">  Jonathan Fuzzy
+                            	<span class="menu-info">
+                                    <span class="menu-date">Seattle</span>
+                                    <span class="menu-action">
+                                        <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                            <i class="fa fa-check"></i>
+                                        </span>
+                                        <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                            <i class="fa fa-times"></i>
+                                        </span>
+                                    </span>
+                            	</span>
+                            </span>
+                                                                </li>
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-3.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">  Sakura Hinata
+                            <span class="menu-info">
+                                <span class="menu-date">Hawaii</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-4.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">  Rikudou Sennin
+                            <span class="menu-info">
+                                <span class="menu-date">Las Vegas</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-5.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">  Kim Kardiosun
+                            <span class="menu-info">
+                                <span class="menu-date">New York</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-6.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">   Brad Pita
+                            <span class="menu-info">
+                                <span class="menu-date">Seattle</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-7.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">  Celline Dior
+                            <span class="menu-info">
+                                <span class="menu-date">Los Angeles</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+                                                                <li> <a href="#">
+                                                                        <span class="menu-icon"><img src="{{ asset('Profile/img/avatar/avatar-8.jpg') }}" alt="example image"></span>
+                                                                    </a>
+                                                                    <span class="menu-text">  Goerge Bruno Marz
+                            <span class="menu-info">
+                                <span class="menu-date">Las Vegas</span>
+                                <span class="menu-action">
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Approve" class="menu-action-icon vd_green vd_bd-green">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="Reject" class="menu-action-icon vd_red vd_bd-red">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- pd-20 -->
+                                            </div>  <!-- photos tab -->
+                                            <div id="groups-tab" class="tab-pane">
+                                                <div class="pd-20">
+                                                    <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-leaf mgr-10 profile-icon"></i> GROUPS</h3>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6">
+                                                            <div class="content-list content-large menu-action-right">
+                                                                <ul class="list-wrapper pd-lr-15">
+                                                                    <li>
+                                                                        <div class="menu-icon"><a href="#"><img src="{{ asset('Profile/img/groups/logo-01.jpg') }}" alt="example image"></a></div>
+                                                                        <div class="menu-text">
+                                                                            <h4 class="mgbt-xs-0"><a href="#">Groupis Group</a></h4>
+                                                                            <div class="menu-info">
+                                                                                <span class="menu-date"> 3467 members </span>
+
+                                                                            </div>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidtation ullamco...</p>
+                                                                        </div>
+                                                                        <div class="menu-action">
+                                                                            <div data-placement="bottom" data-toggle="tooltip" data-original-title="Leave Group" class="menu-action-icon vd_red">
+                                                                                <i class="fa fa-times"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul> <!-- list-wrapper -->
+                                                            </div> <!-- content-list -->
+                                                        </div> <!-- col-xs-12 col-sm-6 -->
+
+                                                        <div class="col-xs-12 col-sm-6">
+                                                            <div class="content-list content-large menu-action-right">
+                                                                <ul class="list-wrapper pd-lr-15">
+                                                                    <li>
+                                                                        <div class="menu-icon"><a href="#"><img src="{{ asset('Profile/img/groups/logo-02.jpg') }}" alt="example image"></a></div>
+                                                                        <div class="menu-text">
+                                                                            <h4 class="mgbt-xs-0"><a href="#">Ztormin Community</a></h4>
+                                                                            <div class="menu-info">
+                                                                                <span class="menu-date"> 12597 members </span>
+
+                                                                            </div>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidtation ullamco...</p>
+                                                                        </div>
+                                                                        <div class="menu-action">
+                                                                            <div data-placement="bottom" data-toggle="tooltip" data-original-title="Leave Group" class="menu-action-icon vd_red">
+                                                                                <i class="fa fa-times"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul> <!-- list-wrapper -->
+                                                            </div> <!-- content-list -->
+                                                        </div> <!-- col-xs-12 col-sm-6 -->
+
+                                                        <div class="col-xs-12 col-sm-6">
+                                                            <div class="content-list content-large menu-action-right">
+                                                                <ul class="list-wrapper pd-lr-15">
+                                                                    <li>
+                                                                        <div class="menu-icon"><a href="#"><img src="{{ asset('Profile/img/groups/logo-03.jpg') }}" alt="example image"></a></div>
+                                                                        <div class="menu-text">
+                                                                            <h4 class="mgbt-xs-0"><a href="#">Book Lovers</a></h4>
+                                                                            <div class="menu-info">
+                                                                                <span class="menu-date"> 67 members </span>
+
+                                                                            </div>
+                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidtation ullamco...</p>
+                                                                        </div>
+                                                                        <div class="menu-action">
+                                                                            <div data-placement="bottom" data-toggle="tooltip" data-original-title="Leave Group" class="menu-action-icon vd_red">
+                                                                                <i class="fa fa-times"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul> <!-- list-wrapper -->
+                                                            </div> <!-- content-list -->
+                                                        </div> <!-- col-xs-12 col-sm-6 -->
+
+
+
+
+                                                    </div> <!-- row -->
+                                                </div> <!-- pd-20 -->
+                                            </div>  <!-- groups tab -->
+
+                                        </div>
+                                        <!-- tab-content -->
+                                    </div>
+                                    <!-- tabs-widget -->              </div>
+                            </div>
+                            <!-- row -->
+
+                        </div>
+                        <!-- .vd_content-section -->
+
+                    </div>
+                    <!-- .vd_content -->
+                </div>
+                <!-- .vd_container -->
+            </div>
+            <!-- .vd_content-wrapper -->
+
+            <!-- Middle Content End -->
+
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .content -->
+
+    <!-- Footer Start -->
+    <footer class="footer-1"  id="footer">
+        <div class="vd_bottom ">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-xs-12">
+                        <div class="copyright" align="center">
+                            Copyright &copy;2018 JobId.fr Tous droits réservés
+                        </div>
+                    </div>
+                </div><!-- row -->
+            </div><!-- container -->
+        </div>
+    </footer>
+    <!-- Footer END -->
+
+
+</div>
+
+<!-- .vd_body END  -->
+<a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+
+<!--
+<a class="back-top" href="#" id="back-top"> <i class="icon-chevron-up icon-white"> </i> </a> -->
+
+<!-- Javascript =============================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="{{ asset('Profile/js/jquery.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('Profile/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/jquery-ui/jquery-ui.custom.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('Profile/js/caroufredsel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/js/plugins.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('Profile/plugins/breakpoints/breakpoints.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/dataTables/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/prettyPhoto-plugin/js/jquery.prettyPhoto.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('Profile/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/tagsInput/jquery.tagsinput.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/bootstrap-switch/bootstrap-switch.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/blockUI/jquery.blockUI.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/plugins/pnotify/js/jquery.pnotify.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('Profile/js/theme.js') }}"></script>
+<script type="text/javascript" src="{{ asset('Profile/custom/custom.js') }}"></script>
+
+<!-- Specific Page Scripts Put Here -->
+<script type="text/javascript" src="{{ asset('Profile/plugins/isotope/isotope.pkgd.min.js') }}"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        "use strict";
+
+        // init Isotope
+        var $container = $('.isotope').isotope({
+            itemSelector: '.gallery-item',
+            layoutMode: 'fitRows'
+        });
+
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            $container.isotope('layout');
+        });
+
+        // bind filter button click
+        $('#filters').on( 'click', 'a', function() {
+            var filterValue = $( this ).attr('data-filter');
+            $('#filters li').removeClass('active');
+            $(this).parent().addClass('active');
+            $container.isotope({ filter: filterValue });
+        });
+
+
+    });
+</script>
+<!-- Specific Page Scripts END -->
+
+
+
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+
+<!-- Mirrored from www.venmond.com/demo/vendroid/pages-user-profile.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Jul 2018 14:13:05 GMT -->
+</html>

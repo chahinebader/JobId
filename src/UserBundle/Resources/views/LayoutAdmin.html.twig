@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<html lang="{{ app.request.getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    {#<meta name="csrf-token" content="{{ csrf_token() }}">#}
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--
+    <link href="{{ asset('fos/libs/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+-->
+
+    <link rel="stylesheet" href="{{ asset('fos/styles/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/progress.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/chat.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/hover.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/bootstrap.min.css') }}">
+    <!--
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    -->
+    <link rel="stylesheet" href="{{ asset('fos/styles/jquerymobile-1.4.5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/libs/OwlCarousel2-2.2.0/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+
+{% block body %}
+    <header>
+
+        <div class="cont">
+            <div class="logo">
+                <a href="#" id="logo-link">
+
+						<img src="{{ asset('Profile_template/images/LOGO-JOBID.png') }}" alt="logo">
+
+                </a>
+            </div>
+
+            <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            <div class="nav">
+
+                <span class="close-icon">X</span>
+
+                <ul>
+                    <!-- <li><a href="#">Imprimeurs </a></li>-->
+
+
+                    {% if app.user %}
+                        <li><a href="{{ path('admin_list_users') }}">Liste Utilisateurs</a></li>
+                        <li><a href="{{ path('inscription_page') }}">Liste Annonces</a></li>
+                        <li><a href="{{ path('admin_statistiques') }}">Statistiques   </a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion   </a></li>
+
+
+
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+
+    </header>
+{% block admin_main_welcome %}
+    <div class="login-content">
+
+        <div class="login-wrapp">
+
+            <div class="img-login-center">
+
+                <img src="{{ asset('Profile_template/images/LOGO-JOBID.png') }}" alt="logo" />
+
+            </div>
+
+
+            <h3 align="center">Bienvenue Administrateur : {{  app.user.username }}</h3>
+
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    //~ jQuery(document).bind('mobileinit', function($){
+    //~ alert('hich');
+    //~ $.mobile.ajaxEnabled = false;
+    //~ $.mobile.links = false;
+    //~ });
+    $(document).bind("mobileinit", function () {
+        $.mobile.ajaxEnabled = false;
+    });
+</script>
+<!--
+		<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+-->
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="{{ asset('fos/libs/OwlCarousel2-2.2.0/dist/owl.carousel.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+<script src="{{ asset('fos/js/init.js') }}"></script>
+<script src="{{ asset('fos/js/script.js') }}"></script>
+<script src="{{ asset('fos/js/chat.js') }}"></script>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

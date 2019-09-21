@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<html lang="{{ app.request.getLocale() }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    {#<meta name="csrf-token" content="{{ csrf_token() }}">#}
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--
+    <link href="{{ asset('fos/libs/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+-->
+
+    <link rel="stylesheet" href="{{ asset('fos/styles/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/progress.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/chat.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/hover.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/styles/bootstrap.min.css') }}">
+    <!--
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    -->
+    <link rel="stylesheet" href="{{ asset('fos/styles/jquerymobile-1.4.5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fos/libs/OwlCarousel2-2.2.0/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ asset('Admin template/images/icons/favicon.ico') }}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/vendor/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Admin template/css/main.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+
+{% block body %}
+    <header>
+
+        <div class="cont">
+            <div class="logo">
+                <a href="#" id="logo-link">
+
+                    <img src="{{ asset('Profile_template/images/LOGO-JOBID.png') }}" alt="logo">
+
+                </a>
+            </div>
+
+            <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            <div class="nav">
+
+                <span class="close-icon">X</span>
+
+                <ul>
+                    <!-- <li><a href="#">Imprimeurs </a></li>-->
+
+
+                    {% if app.user %}
+                        <li><a href="{{ path('admin_list_users') }}">Liste Utilisateurs</a></li>
+                        <li><a href="{{ path('inscription_page') }}">Liste Annonces</a></li>
+                        <li><a href="{{ path('admin_statistiques') }}">Statistiques   </a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion   </a></li>
+
+
+
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table">
+
+                    <div class="row header">
+                        <div class="cell">
+                            Nom Complet
+                        </div>
+                        <div class="cell">
+                            Username
+                        </div>
+                        <div class="cell">
+                            Derniere connexion
+                        </div>
+                        <div class="cell">
+                            Etat du compte
+                        </div>
+                        <div class="cell">
+                            Desactiver/Activer
+                        </div>
+                    </div>
+                    {% for user in users_list %}
+
+                        <div class="row">
+                            <div class="cell" data-title="Nom Complet">
+                                {{ user.nom }} {{ user.prenom }}
+                            </div>
+                            <div class="cell" data-title="Username">
+                                {{ user.email }}
+                            </div>
+                            <div class="cell" data-title="Derniere connexion">
+                                {{ user.lastlogin|date('Y-m-d')  }}
+                            </div>
+                            <div class="cell" data-title="Etat du compte">
+                                {% if user.enabled == true %}
+                                    <div style="color: forestgreen"> Ouvert </div>
+                                {% endif %}
+                                {% if user.enabled == false %}
+                                    <div style="color: red">   Fermé </div>
+                                {% endif %}
+                            </div>
+                            <div class="cell" data-title="Activation">
+                                <a href="{{ path('changer_status_compte', {'id': user.id}) }}"> Activer/Desactiver</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    //~ jQuery(document).bind('mobileinit', function($){
+    //~ alert('hich');
+    //~ $.mobile.ajaxEnabled = false;
+    //~ $.mobile.links = false;
+    //~ });
+    $(document).bind("mobileinit", function () {
+        $.mobile.ajaxEnabled = false;
+    });
+</script>
+<!--
+		<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+-->
+
+<script src="{{ asset('fos/libs/OwlCarousel2-2.2.0/dist/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('fos/js/init.js') }}"></script>
+<script src="{{ asset('fos/js/script.js') }}"></script>
+<script src="{{ asset('admin template/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('admin template/vendor/bootstrap/js/popper.js') }}"></script>
+<script src="{{ asset('admin template/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('admin template/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('admin template/js/main.js') }}"></script>
+
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

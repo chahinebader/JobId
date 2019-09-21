@@ -1,0 +1,27 @@
+{#% extends "@FOSUser/layout.html.twig" %#}
+
+{#% extends "UserBundle::layout.html.twig" %#}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+{#
+<div class="login-content">
+
+    <div class="login-wrapp">
+
+        <div class="img-login-center">
+
+            <img src="{{ asset('fos/images/dashboard.png') }}" alt="logo" />
+
+        </div>
+
+        <h3 align="center">Mes Données</h3>
+        <hr>
+        #}
+            {% include "@FOSUser/Profile/edit_content.html.twig" %}
+    {#
+        <a href="{{ 'change-password' }}" name="mdp" ><i><u>Changer mot de passe</u></i></a>
+    </div>
+</div>
+#}
+{% endblock fos_user_content %}

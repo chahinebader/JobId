@@ -1,0 +1,3 @@
+formation_edit:
+    path:     /addFormation
+    defaults: { _controller: FormationBundle:Format:AddFormation }

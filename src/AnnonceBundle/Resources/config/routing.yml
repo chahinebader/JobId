@@ -1,0 +1,16 @@
+
+annonce:
+    path:     /annonce
+    defaults: { _controller: AnnonceBundle:Annonce:AjoutAnnonce }
+
+show_annonces:
+    path:     /show_annonces
+    defaults: { _controller: AnnonceBundle:Annonce:show_annonces }
+
+details_annonce:
+    path:     /details_annonce/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:details_annonce }
+
+listeannonce:
+    path:     /listeannonce
+    defaults: { _controller: AnnonceBundle:Annonce:ListeAnnonces }

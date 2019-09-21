@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JOBID - Annonces</title>
+    <!-- core CSS -->
+    <link href="{{ asset('Annonces_page/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/prettyPhoto.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('Annonces_page/css/mainAnnonces.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('Annonces_page/css/responsive.css') }}" rel="stylesheet"> -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link href="{{ asset('Annonces_page/images/ico/favicon.ico') }}" rel="shortcut icon">
+    <link href="{{ asset('Annonces_page/images/ico/apple-touch-icon-144-precomposed.png') }}">
+    <link href="{{ asset('Annonces_page/images/ico/apple-touch-icon-114-precomposed.png') }}" rel="apple-touch-icon-precomposed" sizes="144x144" >
+    <link href="{{ asset('Annonces_page/images/ico/apple-touch-icon-72-precomposed.png') }}" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link href="{{ asset('Annonces_page/images/ico/apple-touch-icon-57-precomposed.png') }}" rel="apple-touch-icon-precomposed">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all"  rel="stylesheet" >
+
+
+    <style type="text/css">
+
+
+    </style>
+</head><!--/head-->
+
+<body  style="background-color: #FFFFFF">
+
+<header id="header">
+    <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+        <div class="container_header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('user_homepage') }}"><img src="{{ asset('Annonces_page/images/LOGO-JOBID.png') }}" alt="logo"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="scroll"><a href="#home"><b>Comment ça marche?</b></a></li>
+                    <li class="scroll"><a href="{{ path('show_annonces') }}"> <p style="font-size: 1em; color: #076afd;"> Annonces</p></a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            {% if app.user.brochure == null %}
+                                <img  src="{{ asset('profile/img/avatar/default.png')  }}" class="img-circle" alt="" style="width: 30%;display: inline-block;"> <br>{{ app.user.nom }} {{ app.user.prenom }}
+                            {% else %}
+                                <img  src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" class="img-circle" alt="" style="width: 30%;display: inline-block;"> <br>{{ app.user.nom }} {{ app.user.prenom }}
+                            {% endif %}
+                        </button>
+
+
+
+
+                        <div class="dropdown-content">
+
+                            {% if app.user.brochure == null %}
+                                <h2 style="font-size: 1em; font-weight: 700;color: #076afd;padding-left: 20px;"><img class="img-circle" src="{{ asset('profile/img/avatar/default.png')  }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; "><br>{{ app.user.nom }} {{ app.user.prenom }}</h2>
+                            {% else %}
+                                <h2 style="font-size: 1em; font-weight: 700;color: #076afd;padding-left: 20px;"><img class="img-circle" src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; "><br>{{ app.user.nom }} {{ app.user.prenom }}</h2>
+                            {% endif %}
+                            <br>
+                            <p style="margin-left: 20px !important;    margin-top: -25px;border-bottom: 2px solid #076afd;width: 5%;">Freelancer</p>
+                            <div class="wrapper">
+                                <button class="btn btn-primary btn-lg">
+                                    <a href="{{ path('fos_user_profile_show') }}"class="drpb" style="color: white;">
+                                        REGLAGES PROFILE
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="wrapper">  <button class="btn btn-primary btn-lg">  TABLEAU DE BOARD</button></div>
+                            <a href="#" ><img src="{{ asset('Annonces_page/images/icones/icone4.png') }}" alt="" class="icone_menu" >Paramètres</a>
+                            <a href="{{ path('fos_user_security_logout') }}" style="margin-bottom: 5px;">
+                                <img src="{{ asset('Annonces_page/images/icones/icone4.png') }}" alt="" class="icone_menu" > Déconnexion
+                            </a>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+        </div><!--/.container-->
+    </nav><!--/nav-->
+</header><!--/header-->
+
+
+
+<div class="content-wrapper" style="margin:4px;">
+    <img id="main-image" src="{{ asset('Annonces_page/images/annonces/main_image.png') }}">
+    <div class="text-wrapper">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <h1>À vous de proposez</h1>
+        <h1>votre meilleurs prix!</h1>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+
+<div class="content-wrapperSearch" style="display:table-cell; vertical-align:middle; text-align:center;">
+    <img src="{{ asset('Annonces_page/images/annonces/Rectangle6_15.png') }}" style="width:80%;height:60% ">
+    <div class="text-wrapperSearch" style="margin-left:10%">
+        <br>
+        <form style="width:100%;align:center">
+            <div style="hori-align-align:middle; float: left; width:30%">
+                <input type="text" name="search" placeholder="Recherche annonce">
+                <label id="searchHint" style="font-size:x-small; font-color:grey; text-align:left;">Rechercher avec des mots-clés: web design, logo..</label>
+            </div>
+
+            <div style="hori-align-align:middle;float: left; width:27%">
+                <select>
+                    <option value="" disabled selected>Recherche par profile</option>
+                    <option value="dev">développeur</option>
+                    <option value="design">désigneur</option>
+                </select>
+                <label id="profileHint" style="font-size:x-small; font-color:grey; text-align:left;">Filtre : développeur, désigneur</label>
+            </div>
+
+            <div style="hori-align-align:middle;float: left; width:15%">
+
+            </div>
+
+            <div style="hori-align-align:middle;float: left; width:15%">
+                <button class="buttonS">COMMENCEZ</button>
+                <label id="buttonSearchHint" style="font-size:x-small; font-color:grey; text-align:left;">+ Recherche avancée</label>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+<br><br><br><br><br>
+
+<div class="margin" style="width: 80%;">
+    <div style="width: 110%;">
+        <div class="annonces">
+            <div class="row" >
+                <div class="row" >
+
+                    {% for annonce in a %}
+                    <div class="column" style="border-color: #e3e8ef; border-width:2px; border-style: solid;">
+                        <img src="{{ asset('Annonces_page/images/annonces/annonce.png') }}"  style="width:100%">
+                        <div>
+
+                            <span style="font-size:x-small; color:grey; align:left"> Délai : </span>
+
+                            <span style="font-size:x-small; color:#3bd639; align:left" >{{ annonce.delaiEnHeures }} h</span><!-- annonce.delaiEnHeures-->
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <span style="font-size:x-small; color:grey; align:right">Profile recherché : </span>
+
+                            <span style="font-size:x-small; color:#076afd; align:left">{{ annonce.service }} </span>
+                        </div>
+                        <br>
+                        <div style="color:#076afd;font-size:25px;"> {{ annonce.titre }}</div>
+
+                        <div style="font-size:small; font-color:grey;">
+                              Par {{ annonce.user.nom }} {{ annonce.user.prenom }}
+                        </div>
+                        <br>
+                        <span style="color:#076afd">  {{ annonce.budget }}€</span> /Budget
+                        <br>
+                        <br>
+                            <a href="{{ path('details_annonce',{'id':annonce.id}) }}" >
+                                <button class="buttonPrice" style="margin-left:32%">Proposer un prix →</button>
+                            </a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br>
+
+    </div>
+</div>
+
+
+<div id="myDescription" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="closeDescription">×</span>
+        <div class="" style="margin-left: 10%;">
+            <div class="row"style="margin-right: 10%">
+                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 3%;">ADD </h4>
+                    <img src="{{ asset('Annonces_page/images/icones/rectangle.png') }}" alt="" class="rectangle" style="padding-left: 3%;">
+
+
+                    <div class="col-md-10 col-sm-4 "><label>Description </label><textarea cols="40" rows="5" class="form-control"></textarea>  </div>
+                    <div class=" col-md-10 col-sm-4 "><button class="btn col-md-2 col-sm-4 ">Save</button><button class="btn col-md-2 col-sm-4 ">Edit </button><button class="btn col-md-2 col-sm-4 ">Cancel</button></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="{{ asset('Annonces_page/js/jquery.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/bootstrap.min.js') }}"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="{{ asset('Annonces_page/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/mousescroll.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/smoothscroll.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/wow.min.js') }}"></script>
+<script src="{{ asset('Annonces_page/js/main.js') }}"></script>
+
+
+</body>
+</html>

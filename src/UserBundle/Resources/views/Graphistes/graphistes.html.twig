@@ -1,0 +1,406 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Freelances</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ asset('Graphistes_page/css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 7.5em;
+            padding-bottom: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('Graphistes_page/css/bootstrap-theme.css') }}" >
+    <link rel="stylesheet" href="{{ asset('Graphistes_page/css/main.css') }}" >
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" >
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" >
+    <script src="{{ asset('Graphistes_page/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header id="header">
+    <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+        <div class="container_header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('fos_user_profile_show') }}">
+
+                    <img src="{{ asset('Graphistes_page/images/LOGO-JOBID.png') }}" alt="logo"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="scroll" style="font-weight:700;"><a href="#ccm">Comment ça marche?</a></li>
+                    <li class="scroll" style="font-weight:700;"><a href="#imprimeurs">Imprimeurs</a></li>
+                    <li class="scroll" style="font-weight:700; "><a href="{{ path('show_graphistes') }}" style="color:#076afd;">Freelances</a></li>
+
+                    <li class="scroll" >
+                        {% if app.user.client == true %}
+                            <button style="align:center; margin-top:50px; margin-right:50px;" class="btn1 info">
+                                {% if app.user.client == true %}
+                                    <a href="{{ path('annonce') }}">Postez <br>un JOB</a>
+                                {% endif %}
+                            </button>
+                        {% endif %}
+                    </li>
+
+                    {% if app.user != null %}
+                        <li>
+                            <div class="dropdown" style="margin-top:10px;">
+                                <button class="dropbtn">
+
+                                    {% if app.user.brochure == null %}
+                                        <img  src="{{ asset('profile/img/avatar/default.png')  }}" class="img-circle" alt="" > <br>{{ app.user.nom }} {{ app.user.prenom }}
+
+                                    {% else %}
+                                        <img  src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" class="img-circle" alt="" style="max-width: 200px;max-height: 150px;width: 35%;display: inline-block;"><br>{{ app.user.nom }} {{ app.user.prenom }}
+
+                                    {% endif %}
+
+
+
+                                </button>
+
+                                <div class="dropdown-content">
+                                    {% if app.user.brochure == null %}
+                                        <h2 style="font-size: 1em; font-weight: 700;color: #076afd;padding-left: 20px;"><img class="img-circle" src="{{ asset('profile/img/avatar/default.png')  }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; "><br>{{ app.user.nom }} {{ app.user.prenom }}</h2><br>
+                                    {% else %}
+                                        <h2 style="font-size: 1em; font-weight: 700;color: #076afd;padding-left: 20px;"><img class="img-circle" src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; "><br>{{ app.user.nom }} {{ app.user.prenom }}</h2><br>
+                                    {% endif %}
+                                    <p style="margin-left: 25px !important; margin-top: -15px;border-bottom: 2px solid #076afd;width: 5%;">
+                                        {% if app.user.freelancer == true %}
+                                            Freelancer
+                                        {% else %}
+                                            Client
+                                        {% endif %}
+                                    </p>
+                                    <img src="{{ asset('Graphistes_page/img/Group 1.png') }}" alt="" style="width: 80%;margin-left: 2em;  transform: translateY(-1em);">
+                                    <div class="wrapper">
+                                        <button class="btn btn-primary btn-lg">
+                                            <a href="{{ path('fos_user_profile_show') }}" style="color: white;">
+                                                REGLAGES PROFILE
+                                            </a>
+                                        </button>
+                                    </div>
+                                    <div class="wrapper">  <button class="btn btn-primary btn-lg">  TABLEAU DE BOARD</button></div>
+                                    <a href="#" ><img src="{{ asset('Graphistes_page/img/settings-gears.png') }}" alt="" class="icone_menu" >Paramètres</a>
+                                    <a href="{{ path('fos_user_security_logout') }}" style="margin-bottom: 5px;"><img src="{{ asset('Profile_template/images/icones/icone4.png') }}" alt="" class="icone_menu" > Déconnexion</a>
+
+
+
+
+                                </div>
+                            </div>
+                        </li>
+                    {% endif %}
+                    {% if app.user == null %}
+                        <li class="scroll" style="font-weight:700;"><a href="{{ path('fos_user_security_login') }} ">Connexion</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div><!--/.container-->
+    </nav><!--/nav-->
+</header><!--/header-->
+
+<div class="parent">
+    <img class="image1" src="{{ asset('Graphistes_page/img/testimonials-bg.png') }}" />
+    <img class="image2" src="{{ asset('Graphistes_page/img/Rectangle.png') }}" />
+    <div class="centered">
+        <p class="cover1 ">Une communauté <br> d'exception</p>
+    </div>
+</div>
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+
+        <div class="col-md-3" style="margin-bottom:90em;">
+            <div class="center">
+                <input type="text" id="myInput" onkeyup="" placeholder="Recherche par mots-clés" title="Type in a name" style="">
+                <!-- first block -->
+                <div class="" style="margin-left:1em;">
+                    <p style="font-weight:800; font-size:10pt;">Nombre d’annonce saisie</p>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> <b>3 annonces</b> </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> <b>5 annonces</b> </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> <b>10 annonces</b> </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> <b>15 annonces</b> </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> <b>Plus de 20 annonces</b> </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="" checked="true"> <b>Tout</b> </label>
+                    </div>
+                </div>
+                <!-- End first block -->
+                <hr class="wide">
+                <!-- second block -->
+                <div class="" style="margin-left:1em; margin-right:1em;height:auto;">
+                    <p style="font-weight:800; font-size:10pt;">Catégories</p>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Graphiste</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Développeur</b> </label>
+                        <p style="float:right; color:#c2c2c2">(3)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Motion Designer</b> </label>
+                        <p style="float:right; color:#c2c2c2">(3)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Web Designer</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Typographe</b> </label>
+                        <p style="float:right; color:#c2c2c2">(3)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Infographe</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                </div>
+                <!-- End second block -->
+                <hr class="wide">
+                <!-- third block -->
+                <div class="" style="margin-left:1em; margin-right:1em;height:auto;">
+                    <p style="font-weight:800; font-size:10pt;">Experience</p>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>0-2 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>3-5 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(3)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>6-7 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(3)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>8-10 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>11-15 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(3)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>16-20 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>21-25 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>26-30 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>31-35 ans</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                    <div class="checkbox">
+                        <label style="float:left;"><input type="checkbox" value=""> <b>Plus de 35 ans..</b> </label>
+                        <p style="float:right; color:#c2c2c2">(4)</p>
+                    </div><br>
+                </div>
+                <!-- End third block -->
+                <hr class="wide">
+                <!-- fourth block -->
+                <div class="" style="margin-left:1em; margin-right:1em;height:auto;">
+                    <p style="font-weight:800; font-size:10pt;">Niveau</p>
+                    <div class="col-md-4" style=" align-items: center;" >
+                        <img  src="{{ asset('Graphistes_page/img/level1.png') }}" alt="" class="level">
+
+                        <div class="" style="transform:translateX(+1em);">
+                            <input type="checkbox" id="redirect1" value="" onclick="return redirect1();"> <br>
+                            <p> <b> 1</b> </p>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <img  src="{{ asset('Graphistes_page/img/level2.png') }}" alt="" class="level">
+                        <div class="" style="transform:translateX(+1em);">
+                            <input type="checkbox" id="redirect2" value="" onclick="return redirect2();"> <br>
+                            <p> <b>2</b> </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{{ asset('Graphistes_page/img/level3.png') }}" alt="" class="level">
+                        <div class="" style="transform:translateX(+1em);">
+                            <input type="checkbox" id="redirect3" value="" onclick="return redirect3();"> <br>
+                            <p> <b>3</b> </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End fourth block -->
+            </div>
+        </div>
+        <div class="col-md-9" style="margin-bottom:110em;">
+            <div class="center" style="padding:2em;">
+
+                {% for graphiste in g %}
+                    <hr style="border-top: 1px solid #d8d8d8;">
+                    <!-- user -->
+                    <div class="row">
+                        <!-- user pic -->
+                        {% if graphiste.brochure != null %}
+                            <div class="col-md-2">
+                                <img src="{{asset('uploads/brochures/'~graphiste.id~'user/publications/images/'~graphiste.brochure)}}" alt="" class="user">
+                            </div>
+                        {% else %}
+                            <div class="col-md-2">
+                                <img src="{{ asset('profile/img/avatar/default.png') }}" alt="" class="user">
+                            </div>
+                        {% endif %}
+                        <!-- End of user pic -->
+                        <!-- user info -->
+                        <div class="col-md-7" style="padding-left:2em;">
+                            <div class="row">
+                                <p> <b style="font-size:12pt; font-weight:800;">{{ graphiste.prenom }} {{ graphiste.nom }} </b> | <b style="font-size:11pt; color:#4992fe; font-weight:400;">{{ graphiste.ville }}, {{ graphiste.pays }}</b> </p>
+                            </div>
+
+                            {% if graphiste.description != null %}
+                                <div class="row">
+                                    <p style="width:90%; font-size:9pt; font-weight:700; ">  {{ graphiste.description}} </p>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <p style="width:90%; font-size:9pt; font-weight:700; ">  Pas de description. </p>
+                                </div>
+                            {% endif %}
+
+                            {%  if graphiste.competences != null %}
+                                <div class="row " style="transform:translateY(-0.5em);">
+                                    {% for comptence in graphiste.competences %}
+                                        <div class="skill " >
+                                            {{  comptence.nomcompetence }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            {% if graphiste.competences is empty  %}
+                                <div class="row " style="transform:translateY(-0.5em);">
+                                    <div class="skill " >
+                                        PAS DE COMPETENCES.
+                                    </div>
+                                </div>
+                            {% endif %}
+
+
+                            {% if graphiste.niveau != null %}
+                                <div class="row">
+                                    <p style=" font-size:9pt; font-weight:700;">{{ graphiste.niveau.niveau }}</p>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <p style=" font-size:9pt; font-weight:700;"> Niveau encore non déterminé. </p>
+                                </div>
+                            {% endif %}
+
+
+                        </div>
+                        <!-- End of user info -->
+                        <!-- visit btn -->
+
+                        {% if app.user != null %}
+                            <div class="col-md-3" >
+                                <a href="{{ path('fos_user_security_login') }}">
+                                    <input type="button" name="" value="Voir le profil" class="prop" style="background-color:#076afd">
+                                </a>
+                            </div>
+                        {% else %}
+                            <div class="col-md-3" >
+                                <a href="{{ path('fos_user_security_login') }}">
+                                    <input type="button" name="" value="Voir le profil" class="prop" style="background-color:#076afd">
+                                </a>
+                            </div>
+                        {% endif %}
+
+                        <!-- End of visit btn -->
+                    </div>
+                {% endfor %}
+                <!-- End user -->
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div> <!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="{{ asset('Graphistes_page/js/vendor/jquery-1.11.2.min.js') }}"><\/script>')
+</script>
+
+<script src="{{ asset('Graphistes_page/js/vendor/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('Graphistes_page/js/main.js') }}"></script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+<script>
+    function redirect1(){
+        if(document.getElementById('redirect1').checked){
+            window.location='{{ path('show_graphistes1') }}';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<script>
+    function redirect2(){
+        if(document.getElementById('redirect2').checked){
+            window.location='{{ path('show_graphistes2') }}';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<script>
+    function redirect3(){
+        if(document.getElementById('redirect3').checked){
+            window.location='{{ path('show_graphistes3') }}';
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

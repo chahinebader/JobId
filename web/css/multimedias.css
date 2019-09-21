@@ -1,0 +1,124 @@
+ol li{
+	font-size: 40px;
+	color: #4ea1d3;
+	margin: 20px;
+}
+.img{
+	width: 150px;
+	height: 100px;
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown_content{
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
+	z-index: 1;
+	margin: -150px 250px;
+}
+.dropdown:hover .dropdown_content{
+	display: block;
+
+}
+.desc{
+	padding: 15px;
+	text-align: center;
+}
+.blur{
+	filter: blur(4px);
+}
+.brightness{
+	filter: brightness(250%);
+}
+.contrast{
+	filter: contrast(180%);
+}
+.grayscale{
+	filter: grayscale(100%);
+}
+.invert{
+	filter: invert(100%);
+}
+.opacity{
+	filter: opacity(50%);
+}
+.saturate{
+	filter: saturate(7%);
+}
+.sepia{
+	filter: sepia(100%);
+}
+.shadow{
+	filter: drop-shadow(8px 8px 10px green);
+}
+.huerotate{
+	filter: hue-rotate(180deg);
+}
+th{
+	color :#4ea1d3;
+	height: 50px;
+	width: 200px;
+}
+th,td{
+border-bottom: 1px solid #ddd;
+}
+tr:hover{
+	background-color: #d8e9ef;
+}
+summary::-webkit-details-marker{ /*webkit comptaible avec google chrome  marker enlever le flech de summary*/
+	display: none;
+}
+summary::after{
+	content: "+";
+	color: #ADCA48;
+	float: left;
+	font-size: 1,5em;
+	font-weight: bold;
+	margin: -5px 5px 0;
+	padding: 0;
+	text-align: center;
+	width: 20px;
+}
+details[open]
+summary::after{
+		content: "-";
+}
+.sprite_face_rotate{
+	background: url("images/rx_sociaux.png");
+	background-position: -47px -28px;
+	width: 55px;
+	height: 54px;
+	float: left;
+	transition:transform .8s ease-in-out;
+}
+.sprite_face_rotate:hover{
+	background: url("images/rx_sociaux.png");
+	background-position: -47px -97px;
+	width: 55px;
+	height: 54px;
+	float: left;
+	transform: rotate(360deg);
+}
+
+
+.sprite_linked_rotate{
+	background: url("images/rx_sociaux.png");
+	background-position: -170px -27px;
+	width: 55px;
+	height: 54px;
+	float: left;
+	transition:transform .8s ease-in-out;
+}
+.sprite_linked_rotate:hover{
+	background: url("images/rx_sociaux.png");
+	background-position: -170px -27px;
+	width: 55px;
+	height: 54px;
+	float: left;
+	transform: rotate(360deg);
+}

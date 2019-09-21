@@ -1,0 +1,40 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{##}
+{{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}),
+    'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+
+{#
+<div class="login-content">
+
+<div class="login-wrapp">
+    <br><br>
+    <h3 align="center">Creer votre nouveau mot de passe</h3>
+    <hr>
+<form action="{{ path("fos_user_resetting_reset", {'token': token}) }}" method="post">
+    <div class="form-login-box">
+        <div id="pasw" data-role="none">
+            <label for="paswinp"><h5>Nouveau mot de passe</h5></label>
+            <input type="text" id="paswinp" name="_username" placeholder="Entrer votre nouveau mot de passe"   required="required" autocomplete="username" />
+        </div>
+
+        <div id="pasw" data-role="none">
+            <label for="paswinp"><h5>Confirmation du mot de passe</h5></label>
+            <input type="text" id="paswinp" name="_username" placeholder="Confirmer votre nouveau mot de passe"   required="required" autocomplete="username" />
+        </div>
+
+        <div class="btn-submut">
+            <button type="submit" data-role="none">Reset password</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+#}

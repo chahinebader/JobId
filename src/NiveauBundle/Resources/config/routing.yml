@@ -1,0 +1,3 @@
+niveau_homepage:
+    path:     /
+    defaults: { _controller: NiveauBundle:Default:index }

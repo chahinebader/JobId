@@ -1,0 +1,640 @@
+{# templates/home.html.twig #}
+{% extends "base.html.twig" %}
+
+	{% block content %}
+
+	<section class="home-page">
+		<div class="home-first" style="background:none;">
+
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1920px;height:845px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1920px;height:845px;overflow:hidden;">
+            {% for i in 0..4 %}
+            <div data-p="170.00">
+                <img data-u="image" src="{{ asset('images/Layer-2.jpg') }}" />
+				<div class="home-first-cont" data-u="caption" data-t="{{ i }}" style="position:absolute;top:250px;right:300px;width:922px;height:260px;box-sizing:border-box;">
+
+					<h1>JOB ID a besoin de
+						partenaires comme vous.</h1>
+
+					<div class="links-block">
+						<a href="#"><img src="{{ asset('images/icon/icon.png') }}" alt="img"></a>
+						<a href="#"><img src="{{ asset('images/icon/icon2.png') }}" alt="img"></a>
+
+
+					</div>
+
+
+				</div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:120px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%; background-color:rgba(0,0,0,0.2);">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%; background-color:rgba(0,0,0,0.2);">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    </div>
+
+
+
+{#
+		<div class="home-first">
+
+			<div class="cont">
+
+				<div class="home-first-cont">
+
+					<h1>JOB ID a besoin de
+						partenaires comme vous.</h1>
+
+					<div class="links-block">
+						<a href="#"><img src="{{ asset('images/icon/icon.png') }}" alt="img"></a>
+						<a href="#"><img src="{{ asset('images/icon/icon2.png') }}" alt="img"></a>
+
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+#}
+		<div class="home-filter cont">
+
+			<div class="home-filter-blocks">
+
+				<div class="input-block">
+
+					<input data-role="none" type="search" placeholder="&#xf002;  Projet graphique ">
+
+				</div>
+
+
+
+
+			</div>
+			<div class="home-filter-blocks">
+
+				<div class="select-block">
+
+					<select data-role="none">
+						<option value="">Projet Immediat / Enchères &#xf107;</option>
+					</select>
+
+				</div>
+
+
+
+			</div>
+			<div class="home-filter-blocks range-filter">
+
+				<div data-role="main" class="ui-content">
+
+					<p class="range-add">Ad Price  <span><i class="fa fa-plus" aria-hidden="true"></i></span></p>
+
+					<form method="post" action="/action_page_post.php">
+						<div data-role="rangeslider">
+							<label for="price-min">Price: ($) </label>
+							<input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+							<label for="price-max">Price:</label>
+
+							<span>-</span><input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+						</div>
+
+
+					</form>
+
+			</div>
+
+
+
+		</div>
+			<div class="home-filter-blocks " data-role="none">
+
+				<div class="search-type">
+					<button data-role="none">COMMENCEZ</button>
+					<a href="#" data-role="none">+ Advance Search</a>
+
+
+				</div>
+
+
+			</div>
+
+			</div>
+
+
+
+
+
+
+
+    <div class="home-project">
+
+        <div class="cont">
+
+            <h2>Projet en ligne</h2>
+
+				<div class="home-project-cont">
+<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+
+				
+			<div class="frame" id="basic">
+				
+				<ul class="clearfix">
+        {% for ProjetEnLigne in projetsEnLigne %}
+<li>
+					<div class="home-project-block">
+
+					<div class="project-img">
+						<img src="{{ asset('images/project.jpg') }}" alt="img">
+					</div>
+					<span class="project-time">{{ ProjetEnLigne.dateCreation|date('Y-m-d à H:i:s') }}</span>
+
+					<div class="project-info">
+
+
+
+						<p class="project-title"><a href="{{ path('show-job1', { 'projets' : ProjetEnLigne.id }) }}">{{ ProjetEnLigne.titre }}</a></p>
+
+						<img src="{{ asset('images/logoPr.jpg') }}" alt="img" class="project-logo">
+
+						<div class="project-deadLine">
+
+							<p class="project-title">{{ ProjetEnLigne.description }}</p>
+							<span>3 JOURS/FORMAT PDF?FICHIER SOURCE</span>
+							<span>PRIX DE DEPART : {{ ProjetEnLigne.budget }}€</span>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+        </li>
+        {% endfor %}
+
+				</ul>
+
+				
+			</div>
+
+			<ul class="pages"></ul>
+
+			<div class="controls center">
+				<span class="btn prevPage"><i class="icon-chevron-left"></i><i class="fa fa-chevron-left"></i> </span>
+				<!--button class="btn prev"><i class="icon-chevron-left"></i> item</button>
+				<button class="btn backward"><i class="icon-chevron-left"></i> move</button>
+
+				<div class="btn-group">
+					<button class="btn toStart">toStart</button>
+					<button class="btn toCenter">toCenter</button>
+					<button class="btn toEnd">toEnd</button>
+				</div>
+
+				<div class="btn-group">
+					<button class="btn toStart" data-item="10"><strong>10</strong> toStart</button>
+					<button class="btn toCenter" data-item="10"><strong>10</strong> toCenter</button>
+					<button class="btn toEnd" data-item="10"><strong>10</strong> toEnd</button>
+				</div>
+
+				<div class="btn-group">
+					<button class="btn add"><i class="icon-plus-sign"></i></button>
+					<button class="btn remove"><i class="icon-minus-sign"></i></button>
+				</div>
+
+				<button class="btn forward">move <i class="icon-chevron-right"></i></button>
+				<button class="btn next">item <i class="icon-chevron-right"></i></button-->
+				<span class="btn nextPage"> <i class="icon-chevron-right"></i><i class="fa fa-chevron-right"></i></span>
+			</div>
+
+				
+			</div>
+		</div>
+	</div>
+
+
+
+
+{#
+
+    <div class="home-project">
+
+        <div class="cont">
+
+            <h2>Projet en ligne</h2>
+
+				<div class="home-project-cont">
+        {% for ProjetEnLigne in projetsEnLigne %}
+
+					<div class="home-project-block">
+
+					<div class="project-img">
+						<img src="{{ asset('images/project.jpg') }}" alt="img">
+					</div>
+					<span class="project-time">{{ ProjetEnLigne.dateCreation|date('Y-m-d à H:i:s') }}</span>
+
+					<div class="project-info">
+
+
+
+						<p class="project-title"><a href="{{ path('show-job1', { 'projets' : ProjetEnLigne.id }) }}">{{ ProjetEnLigne.titre }}</a></p>
+
+						<img src="{{ asset('images/logoPr.jpg') }}" alt="img" class="project-logo">
+
+						<div class="project-deadLine">
+
+							<p class="project-title">{{ ProjetEnLigne.description }}</p>
+							<span>3 JOURS/FORMAT PDF?FICHIER SOURCE</span>
+							<span>PRIX DE DEPART : {{ ProjetEnLigne.budget }}€</span>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+        
+        {% endfor %}
+			</div>
+		</div>
+	</div>
+#}
+		<div class="home-banner">
+
+			<div class="cont">
+
+				<p>DES CRèATIONS GRAPHIQUES UNIQUES POUR NOS CLIENTS .
+					UNE NOUVELLE FACON DE FAIRE SA PLACE POUR NOS GRAPHISTES.</p>
+
+				<img src="{{ asset('images/banner.jpg') }}" alt="img">
+
+			</div>
+
+		</div>
+
+		<div class="home-success">
+
+			<div class="cont">
+
+
+				<h2>Success stories</h2>
+
+				<ul class="img-cont">
+					<li>
+
+
+						<div class="content-center" >
+							<h5>Logo design for Coffee Shop for Terri</h5>
+							<a href="#" >FIND LOGO DESIGNERS</a>
+
+
+						</div>
+
+						<div class="gallery__seller" >
+
+							<div class="gallery__seller-avatar" >
+							<span class="freelancer__image" >
+								<img src="{{ asset('images/prof.jpg') }}" alt="img" ></span>
+							</div>
+
+							<p>by John</p>
+							<p>Freelance Graphic Artist</p>
+						</div>
+
+					</li>
+
+					<li>
+
+						<h3>Recent Posts</h3>
+
+						<h4>Hello world!</h4>
+
+						<p>Welcome to Kallyas Demo Sites. This is your fir . . .</p>
+
+						<div class="post-block">
+
+							<img src="{{ asset('images/post.jpg') }}" alt="img">
+							<div class="post-block-info">
+								<h6>Top 10 Most Popular Premium Wordpress
+									of 2017</h6>
+								<p>Lorem Ipsum is simply dummy text of the printing and types
+									etting industry. </p>
+							</div>
+
+						</div>
+						<div class="post-block">
+
+							<img src="{{ asset('images/post.jpg') }}" alt="img">
+							<div class="post-block-info">
+								<h6>Top 10 Most Popular Premium Wordpress
+									of 2017</h6>
+								<p>Lorem Ipsum is simply dummy text of the printing and types
+									etting industry. </p>
+							</div>
+
+						</div>
+						<div class="post-block">
+
+							<img src="{{ asset('images/post.jpg') }}" alt="img">
+							<div class="post-block-info">
+								<h6>Top 10 Most Popular Premium Wordpress
+									of 2017</h6>
+								<p>Lorem Ipsum is simply dummy text of the printing and types
+									etting industry. </p>
+							</div>
+
+						</div>
+
+
+					</li>
+
+					<li class="col-md-4.5">
+
+
+						<div class="content-center" >
+							<h5>Logo design for Coffee Shop for Terri</h5>
+							<a href="#" >FIND LOGO DESIGNERS</a>
+
+
+						</div>
+
+						<div class="gallery__seller" >
+
+						<div class="gallery__seller-avatar" >
+							<span class="freelancer__image" >
+								<img src="{{ asset('images/prof.jpg') }}" alt="img" ></span>
+						</div>
+
+					   <p>by John</p>
+							<p>Freelance Graphic Artist</p>
+					</div>
+
+					</li>
+
+					<li class="col-md-7">
+
+
+						<div class="content-center" >
+							<h5>Logo design for Coffee Shop for Terri</h5>
+							<a href="#" >FIND LOGO DESIGNERS</a>
+
+
+						</div>
+
+						<div class="gallery__seller" >
+
+							<div class="gallery__seller-avatar" >
+							<span class="freelancer__image" >
+								<img src="{{ asset('images/prof.jpg') }}" alt="img" ></span>
+							</div>
+
+							<p>by John</p>
+							<p>Freelance Graphic Artist</p>
+						</div>
+
+					</li>
+				</ul>
+
+			</div>
+
+
+		</div>
+
+		<div class="home-job">
+			<div class="cont">
+
+				<div class="home-job-left">
+
+					<h3>We’ll always match you up with opportunities
+						that are the right fit</h3>
+					<p>It is a long established fact that a reader will be distracted by the reada
+						ble content of a page when looking at its layout. The point of using Lorem
+						Ipsum is that it has a more-or-less normal distribution of letters,as oppos
+						ed to using 'Content here, content here'.</p>
+					<a href="#">FIND ANOTHER JOB</a>
+
+				</div>
+
+				<div class="home-job-right">
+
+					<div class="home-job-right-cont">
+						<a href="#">FIND JOBS EASILY</a>
+						<p class="home-job-tags">
+
+							<span>#user experience </span>
+							<span>#creative </span><span>#music</span>
+
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="home-started">
+
+			<h2>Get started in minutes</h2>
+
+			<div class="cont">
+
+				<div class="home-started-blocks">
+					<img src="{{ asset('images/start.png') }}" alt="img">
+					<h3>1</h3>
+					<p>Loguin you</p>
+				</div>
+
+				<div class="home-started-blocks">
+					<img src="{{ asset('images/start2.png') }}" alt="img">
+					<h3>2</h3>
+					<p>Briefez et Déposer
+						votre annonces</p>
+				</div>
+
+				<div class="home-started-blocks">
+					<img src="{{ asset('images/start3.png') }}" alt="img">
+					<h3>3</h3>
+					<p>Trouvez votre
+						graphiste</p>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+		<div class="home-testimonials">
+
+			<div class="cont">
+
+				<div class="testimonial">
+
+					<div class="owl-carousel owl-theme carousel1">
+						<div class="item ">
+							<div class="slider-list">
+
+								<div class="testimonial-img">
+
+									<img src="{{ asset('images/testimonial.jpg') }}" alt="img">
+
+								</div>
+
+								<div class="testimonial-message">
+
+									<p class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+										since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+										centuries,but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+									<p class="worker">SAMANTA WARSON</p>
+									<p class="companyName">company </p>
+
+
+								</div>
+
+								</div>
+							</div>
+						<div class="item ">
+							<div class="slider-list">
+
+								<div class="testimonial-img">
+
+									<img src="{{ asset('images/testimonial.jpg') }}" alt="img">
+
+								</div>
+
+								<div class="testimonial-message">
+
+									<p class="message">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+										since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+										centuries,but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+									<p class="worker">SAMANTA WARSON</p>
+									<p class="companyName">company </p>
+
+
+								</div>
+
+							</div>
+						</div>
+						</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+	</section>
+
+
+	{% endblock %}
+	{% block javascripts %}
+    <script src="{{ asset('js/jssor.slider-27.1.0.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideoTransitions = [
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:1000,y:185},{b:1000,d:500,o:-1},{b:1500,d:500,o:1},{b:2000,d:1500,r:360},{b:3500,d:1000,rX:30},{b:4500,d:500,rX:-30},{b:5000,d:1000,rY:30},{b:6000,d:500,rY:-30},{b:6500,d:500,sX:1},{b:7000,d:500,sX:-1},{b:7500,d:500,sY:1},{b:8000,d:500,sY:-1},{b:8500,d:500,kX:30},{b:9000,d:500,kX:-30},{b:9500,d:500,kY:30},{b:10000,d:500,kY:-30},{b:10500,d:500,c:{x:125.00,t:-125.00}},{b:11000,d:500,c:{x:-125.00,t:125.00}}],
+              [{b:0,d:600,x:535,e:{x:27}}],
+              [{b:-1,d:1,o:-1},{b:0,d:600,o:1,e:{o:5}}],
+              [{b:-1,d:1,c:{x:250.0,t:-250.0}},{b:0,d:800,c:{x:-250.0,t:250.0},e:{c:{x:7,t:7}}}],
+              [{b:-1,d:1,o:-1},{b:0,d:600,x:-570,o:1,e:{x:6}}],
+              [{b:-1,d:1,o:-1,r:-180},{b:0,d:800,o:1,r:180,e:{r:7}}],
+              [{b:0,d:1000,y:80,e:{y:24}},{b:1000,d:1100,x:570,y:170,o:-1,r:30,sX:9,sY:9,e:{x:2,y:6,r:1,sX:5,sY:5}}],
+              [{b:2000,d:600,rY:30}],
+              [{b:0,d:500,x:-105},{b:500,d:500,x:230},{b:1000,d:500,y:-120},{b:1500,d:500,x:-70,y:120},{b:2600,d:500,y:-80},{b:3100,d:900,y:160,e:{y:24}}],
+              [{b:0,d:1000,o:-0.4,rX:2,rY:1},{b:1000,d:1000,rY:1},{b:2000,d:1000,rX:-1},{b:3000,d:1000,rY:-1},{b:4000,d:1000,o:0.4,rX:-1,rY:-1}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $Idle: 2000,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions,
+                $Breaks: [
+                  [{d:2000,b:1000}]
+                ]
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 9800;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+	<script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/sly.min.js') }}"></script>
+	<script src="{{ asset('js/horizontal.js') }}"></script>
+	{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/horizontal.css') }}">
+    {% endblock %}

@@ -1,0 +1,69 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+
+user_publicite:
+    path:     /publicite
+    defaults: { _controller: UserBundle:Publicite:publicitejobid }
+
+inscription_page:
+    path:     /inscription
+    defaults: { _controller: UserBundle:Default:inscription }
+
+
+show_graphistes:
+    path:     /show_graphistes
+    defaults: { _controller: UserBundle:User:show_graphistes }
+
+show_graphistes1:
+    path:     /show_graphistes1
+    defaults: { _controller: UserBundle:User:show_graphistes1 }
+
+show_graphistes2:
+    path:     /show_graphistes2
+    defaults: { _controller: UserBundle:User:show_graphistes2 }
+
+show_graphistes3:
+    path:     /show_graphistes3
+    defaults: { _controller: UserBundle:User:show_graphistes3 }
+
+
+delete_experience:
+    path: /delete-experience/{id}
+    defaults: { _controller: UserBundle:Profile:deleteExperience }
+
+delete_formation:
+    path: /delete-formation/{id}
+    defaults: { _controller: UserBundle:Profile:deleteFormation }
+
+delete_competence:
+    path: /delete-competence/{id}
+    defaults: { _controller: UserBundle:Profile:deleteCompetence }
+
+delete_langue:
+    path: /delete-langue/{id}
+    defaults: { _controller: UserBundle:Profile:deleteLangue }
+
+delete_portfolio:
+    path: /delete-porfolio/{id}
+    defaults: { _controller: UserBundle:Profile:deletePortfolio }
+
+
+
+
+admin_mainpage:
+    path: admin/adminpanel
+    defaults: { _controller: UserBundle:Admin:Adminpanel }
+
+admin_list_users:
+    path: admin/adminpanel_listeusers
+    defaults: { _controller: UserBundle:Admin:ListeUsers }
+admin_list_users_bycritere:
+    path: admin/adminpanel_listeusersbycritere
+    defaults: { _controller: UserBundle:Admin:FindUserByUsername }
+changer_status_compte:
+    path: admin/changestatus/{id}
+    defaults: { _controller: UserBundle:Admin:ChangerCompte }
+admin_statistiques:
+    path: admin/admin_statistiques
+    defaults: { _controller: UserBundle:Admin:AfficherStatistiques }

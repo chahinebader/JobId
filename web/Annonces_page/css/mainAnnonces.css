@@ -1,0 +1,103 @@
+#main-image{
+  max-width:99%;
+  max-height:30%;
+}
+.text-wrapper{
+	width:50%;
+	position: relative;
+	margin-top: -40%;
+}
+.text-wrapper h1 {
+	text-align: center ;
+	color: #000000;
+	font-size: 30px;
+}
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 22%;
+	margin: 13px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 500px) {
+    .column {
+        width: 100%;
+    }
+}
+
+#Rectangle6_15 
+{ 
+	 left: 100px; 
+	 right:100px;
+	 top: 500px;  
+} 
+
+.text-wrapperSearch{
+	position: relative;
+	margin-top: -10%;
+}
+
+
+input[type=text] {
+    width: 320px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/../images/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+select {
+    width: 220px;
+}
+
+form .profileHint .searchHint{
+  display: flex; /* 2. display flex to the rescue */
+  flex-direction: row;
+}
+
+/* Here price ranger css*/
+
+
+
+/* Here price ranger css end */
+
+.buttonS {
+    background-color: #ADD8E6; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	width: 180px;
+}
+
+.buttonPrice {
+    background-color: white; 
+    border-color:#076afd;
+    color: #076afd;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	width: 180px;
+	height: 30px;
+}
+

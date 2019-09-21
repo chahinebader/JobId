@@ -1,0 +1,21 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="login-content">
+
+        <div class="login-wrapp">
+
+            <div class="img-login-center">
+
+                {#<img src="{{ asset('fos/images/dashboard.png') }}" alt="logo" />#}
+                <h3 align="center">Reinitialisez votre mot de passe</h3>
+                <hr>
+
+            </div>
+
+
+            {% include "@FOSUser/Resetting/request_content.html.twig" %}
+        </div>
+    </div>
+
+{% endblock fos_user_content %}

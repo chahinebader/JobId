@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <link href="{{ asset('Inscription_page/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('Inscription_page/images/ico/favicon.ico') }}">
+    <style type="text/css"></style>
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body background="{{ asset('Inscription_page/FOND.png') }}">
+<div class="navigation">
+    <nav>
+        <button id="btn1"><a href="#" > Comment sa marche ? </a></button>
+        <button id="btn1"><a href="#" > Postez <br>un JOB </a></button>
+        <button id="btn1"><a href="{{ path('inscription_page') }}" > S’inscrire </a></button>
+        <button id="btn1"><a href="{{ path('fos_user_security_login') }}"  >Connexion   </a></button>
+    </nav>
+    <div class="image">
+        <a href=""><img src="{{ asset('Inscription_page/logo.png') }}"></a>
+    </div>
+
+</div>
+{{ form_start(form_user_type) }}
+<div class=" center container" id="back" >
+    <img src="{{ asset('Inscription_page/PHOTO.png') }}" alt="image" class="row">
+    <br>
+    <p class="vous row">Vous êtes ?</p>
+    <div class="col-sm-10">
+
+        <div class="col-sm-6" id="bt" style="width: 37%;padding: 6px; display: inline-block;background-color: #076afd;">
+            {{ form_row(form_user_type.freelancer,{'label' : "Freelancer", 'attr': {'class': 'butn-client'},'id' : 'btn_client'}) }}
+        </div>
+        <div class="col-sm-6" style="width: 30%;padding: 6px; display: inline-block;background-color: #076afd;">
+            {{ form_row(form_user_type.client,{'label' : "Client", 'attr': {'class': 'butn-freelancer'},'id' : 'btn_client'}) }}
+        </div>
+        {{ form_row(form_user_type._token) }}
+    </div>
+    {#        <button class="butn-client" value="" id="btn_client">Client</button>
+    <button class="butn-freelancer" value="" id="btn_freelancer">Freelance</button>#}
+
+
+
+    <div class="row">
+        <label class="check contain ">
+            <input type="checkbox" id="checkbox_row1"> <!--  checked="checked" -->
+            Oui ! Je souhaite recevoir par mail des newletters pour m’informer
+            des dernières actualitées de la plateforme jobid.fr
+            <span class="checkmark"></span>
+        </label>
+        <label class="check contain">
+            <input type="checkbox" id="checkbox_row2">
+            Oui, je comprends et j'accepte <a href="url">les conditions d'utilisation</a> de jobid.fr,
+            y compris les régles d’utilisateur. <a href="url">Accord et politique de confidentialité</a>.
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    {{ form_row(form_user_type.save,{'label' : "Suivant", 'attr': {'class': 'butn suivant row'},'id': 'suivant'}) }}
+
+    {# <button class="butn suivant row" id="suivant" >
+
+         <a href="{{ path('fos_user_registration_register') }}">
+             Suivant
+         </a>
+
+     </button>
+ #}
+</div>
+
+
+<script type="text/javascript">
+    var btnfreelancer = document.getElementById('btn_client')
+
+
+
+    document.getElementById('suivant').hidden = true ;
+    var ishidden = true;
+
+    document.getElementById('checkbox_row2').onchange = function() {
+
+        if (ishidden == false) {
+            ishidden=document.getElementById('suivant').hidden = true
+
+        }
+        else
+
+        {
+            ishidden=document.getElementById('suivant').hidden = false
+
+        }
+
+
+    }
+
+
+    document.getElementById('btn_client').onclick = function() {
+
+
+
+        // set button client blue
+
+        //set button freelancer white
+
+        // set object user isfreelancer or isclient
+
+    }
+    document.getElementById('btn_free').onclick = function() {
+
+        document.getElementById('btn_client').hidden = ! document.getElementById('btn_client').hidden
+    }
+
+
+
+    document.getElementById('suivant').hidden = ! document.getElementById('suivant').hidden
+
+
+    document.getElementById('btn_client').onclick = function() {
+
+        $('.butn-client').addClass('.on-selected');
+        $('.butn-freelancer').addClass('.on-diselected');
+
+    };
+
+
+
+
+</script>
+
+</body>
+
+</html>

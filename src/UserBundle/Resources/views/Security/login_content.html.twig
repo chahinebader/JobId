@@ -1,0 +1,58 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div align="center"><h5 style="color: red;">{{ error.messageKey|trans(error.messageData, 'security') }}</h5></div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+    <div class="form-login-box">
+{#
+            <div id="first" data-role="none">
+                <label for="email">{{ 'security.login.username'|trans }}</label>
+                <input id="email" name="_username" placeholder="Your Username" type="text" data-role="none">
+            </div>
+#}
+
+        <div id="first" data-role="none">
+            <label for="first"><h5>Adresse mail</h5></label>
+            <input type="text" id="first" name="_username" placeholder="Entrer votre adresse mail"  value="{{ last_username }}" required="required" autocomplete="username" />
+        </div>
+
+        <div id="pasw" data-role="none">
+            <label for="paswinp"><h5>Mot de passe</h5></label>
+            <input id="paswinp" name="_password" placeholder="Entrer votre mot de passe" type="password" data-role="none">
+        </div>
+
+        <div class="btn-submut">
+            <button type="submit" data-role="none">Connexion</button>
+        </div>
+
+        {#
+    <label for="password">{{ 'security.login.password'|trans }}</label>
+    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+    #}
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+
+        <div class="remember">
+            <input type="checkbox" id="chek" name="remember">
+            <label for="chek">
+                Se souvenir de moi
+            </label>
+            <!--style="margin-left: 29%"-->
+            <a href="{{ 'resetting/request' }}" name="mdp" ><i><u>Mot de passe oublié ?</u></i></a>
+
+        </div>
+
+        {#
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    #}
+
+    </div>
+</form>

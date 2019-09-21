@@ -1,0 +1,122 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="login-content">
+
+    <div class="login-wrapp">
+
+        <div class="img-login-center">
+            <img src="{{ asset('fos/images/dashboard.png') }}" alt="logo" />
+        </div>
+        <hr>
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.nom, { 'id': 'first'} ) }}
+        {{ form_row(form.prenom, { 'id': 'first'} ) }}
+        {{ form_row(form.email, { 'id': 'first'} ) }}
+        {{ form_row(form.pays, { 'id': 'second'} )}}
+        {{ form_row(form.plainPassword.first, { 'id': 'paswinp'} ) }}
+        {{ form_row(form.plainPassword.second, { 'id': 'paswinp'} ) }}
+<div style="display: none">
+        <div id="freelancerbox">
+            {{ form_row(form.freelancer ) }}
+        </div>
+
+        {#% if(document.getElementById('clientbox').checked) %#}
+        <div id="clientbox">
+            {{ form_row(form.client ) }}
+        </div>
+        {#% endif %#}
+</div>
+ {% if  app.session.get('client')   %}
+        <div id="entreprisebox">
+            {{ form_row(form.entreprise ) }}
+        </div>
+
+        <div id="individuellebox">
+            {{ form_row(form.individuelle ) }}
+        </div>
+
+
+        <div id="siretbox">
+            {{ form_row(form.siret ) }}
+        </div>
+
+     {% else %}
+     <div style="display: none">
+         <div id="entreprisebox">
+             {{ form_row(form.entreprise ) }}
+         </div>
+
+         <div id="individuellebox">
+             {{ form_row(form.individuelle ) }}
+         </div>
+
+
+         <div id="siretbox">
+             {{ form_row(form.siret ) }}
+         </div>
+
+     </div>
+{% endif %}
+
+        {{ form_row(form.plainPassword.second, { 'id': 'paswinp'} ) }}
+
+        {#
+         <div class="form-group">
+             {{ form_label (form.roles, "Roles", {'label_attr':{'class':'col-sn-6 control-label'}})}}
+             {{ form_errors(form.roles) }}
+             <div class="col-sn-10">
+                 {{ form_widget(form.roles, {'attr': {'class': 'form-control'}}) }}
+             </div>
+         </div>
+         #}
+
+
+        <div class="btn-submut">
+
+            <button type="submit" data-role="none">Sign Me Up</button>
+
+        </div>
+
+        <br>
+        {{ form_end(form) }}
+
+
+
+
+
+        <div class="social-list">
+
+            <ul>
+                {#
+                <a href="{{ path('facebook') }}"><li class="fb"><img src="{{ asset('images/social/soc1.png') }}" /></li></a>
+                <a href="{{ path('twitter') }}"><li class="tw"><img src="{{ asset('images/social/soc2.png') }}" /></li></a>
+                <a href="{{ path('google') }}"><li class="google"><img src="{{ asset('images/social/soc3.png') }}" /></li></a>
+                <a href="{{ path('linkedin') }}"><li class="in"><img src="{{ asset('images/social/soc4.png') }}" /></li></a>
+                #}
+
+                <li class="fb"><a href="https://www.facebook.com/jobid.fr/"><img src="{{ asset('fos/images/social/soc1.png') }}" /></a></li>
+
+                <li class="tw"><a href="#"><img src="{{ asset('fos/images/social/soc2.png') }}" /></a></li>
+
+                <li class="google"><a href="#"><img src="{{ asset('fos/images/social/soc3.png') }}" /></a></li>
+
+                <li class="in"><a href="https://www.linkedin.com/company/jobid-fr/"><img src="{{ asset('fos/images/social/soc4.png') }}" /></a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+    <script>
+        if(document.getElementById('clientbox').checked){
+            document.getElementById('entreprisebox').hidden = true
+
+        }
+
+    </script>
+{% endblock fos_user_content %}

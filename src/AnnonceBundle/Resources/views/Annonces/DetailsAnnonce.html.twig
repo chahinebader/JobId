@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Details Annonce</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link  href="{{ asset('Details_Annonces_page/css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <link href="{{ asset('Details_Annonces_page/css/bootstrap-theme.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Details_Annonces_page/css/main.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="{{ asset('Details_Annonces_page/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+</head>
+
+<body>
+<header id="header">
+    <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+        <div class="container_header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path('user_homepage') }}">
+                    <img src="{{ asset('Annonces_page/images/LOGO-JOBID.png') }}" alt="logo">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="scroll"><a href="#home"><b>Comment ça marche?</b></a></li>
+                    <li class="scroll"><a href="{{ path('show_annonces') }}"> <p style="font-size: 1em; color: #076afd;"> Annonces</p></a></li>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            {% if app.user.brochure == null %}
+                                <img  src="{{ asset('profile/img/avatar/default.png')  }}" class="img-circle" alt="" style="width: 30%;display: inline-block;"> <br>{{ app.user.nom }} {{ app.user.prenom }}
+                            {% else %}
+                                <img  src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" class="img-circle" alt="" style="width: 30%;display: inline-block;"> <br>{{ app.user.nom }} {{ app.user.prenom }}
+                            {% endif %}
+                        </button>
+
+
+
+
+                        <div class="dropdown-content">
+
+                            {% if app.user.brochure == null %}
+                                <h2 style="font-size: 1em; font-weight: 700;color: #076afd;padding-left: 20px;"><img class="img-circle" src="{{ asset('profile/img/avatar/default.png')  }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; "><br>{{ app.user.nom }} {{ app.user.prenom }}</h2>
+                            {% else %}
+                                <h2 style="font-size: 1em; font-weight: 700;color: #076afd;padding-left: 20px;"><img class="img-circle" src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; "><br>{{ app.user.nom }} {{ app.user.prenom }}</h2>
+                            {% endif %}
+                            <br>
+                            <p style="margin-left: 25px !important; margin-top: -15px;border-bottom: 2px solid #076afd;width: 5%;">
+                                {% if app.user.freelancer == true %}
+                                    Freelancer
+                                {% else %}
+                                    Client
+                                {% endif %}
+                            </p>
+                            <div class="wrapper">
+                                <button class="btn btn-primary btn-lg">
+                                    <a href="{{ path('fos_user_profile_show') }}"class="drpb" style="color: white;">
+                                        REGLAGES PROFILE
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="wrapper">  <button class="btn btn-primary btn-lg">  TABLEAU DE BOARD</button></div>
+                            <a href="#" ><img src="{{ asset('Annonces_page/images/icones/icone4.png') }}" alt="" class="icone_menu" >Paramètres</a>
+                            <a href="{{ path('fos_user_security_logout') }}" style="margin-bottom: 5px;">
+                                <img src="{{ asset('Annonces_page/images/icones/icone4.png') }}" alt="" class="icone_menu" > Déconnexion
+                            </a>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+        </div><!--/.container-->
+    </nav><!--/nav-->
+</header><!--/header-->
+<div class="" style="width: 100%;">
+    <img src="{{ asset('Details_Annonces_page/images/cover.png') }}" alt="cover" style="width:100%; height: 522px;">
+    <div class="centered">
+        <p class="cover1 ">{{ annonce.titre }}</p>
+        <p class="cover2">Par {{ annonce.user.nom }} {{ annonce.user.prenom }}</p>
+    </div>
+</div>
+<div class="container-fluid">
+    <!-- Example row of columns -->
+    <div class="row" style="padding:2em;">
+        <!-- first col -->
+        <div class="col-md-7">
+
+            <div class="row d-inline">
+                <div class="col-sm-1" style="margin-right: 5em;">
+                    <img src="{{ asset('Details_Annonces_page/images/annonce.png') }}" alt="profile_pic" style="height: 105px; width: 112px;">
+                </div>
+                <!--
+                  <div class="col-sm-1" style="">
+                    <div style="height: 16px; "></div>
+                    <img src="images\rectangle.png" alt="profile_pic" style="height: 74px;">
+                    <div style="height: 16px;"></div>
+                </div>
+                -->
+                <div class="col-md-9">
+                    <div class="row d-inline" style="height: 25px;"></div>
+                    <div class="row d-inline">
+
+                        <div class="col-sm-5">
+                            <p><img  src="{{ asset('Details_Annonces_page/images/icones/placeHolder.png') }}" alt="location" style="height: 20px; width: 20px;">
+                                {{ annonce.user.etat }}, {{ annonce.user.ville }}, {{ annonce.user.pays }}</p>
+                        </div>
+                    </div>
+                    <div class="row d-inline">
+
+                        <div class="col-sm-5">
+                            <p><img src="{{ asset('Details_Annonces_page/images/icones/date.png') }}" alt="Date" style="height: 20px; width: 20px;"><b> Date :</b>  {{ annonce.duree|date('Y-m-d') }}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p><img src="{{ asset('Details_Annonces_page/images/icones/user.png') }}" alt="user" style="height: 20px; width: 20px;"> {{ annonce.service }}</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p><img src="{{ asset('Details_Annonces_page/images/icones/vues.png') }}" alt="vues" style="height: 20px; width: 20px;"><strong> Vues :</strong> {{ annonce.nbVues }}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row d-inline" style="margin-top:50px;">
+                <p style="font-size:18pt;"> <b>Description</b> </p>
+                <img src="{{ asset('Details_Annonces_page/images/line.png') }}" alt="line" style="width: 60%;">
+                <p style="width: 80%; margin-bottom: 50px;">
+                    {{ annonce.descriptionannonce}}>mon style graphique
+                </p>
+                <p style="font-size:18pt;"> <b>Style graphique</b> </p>
+                <img src="{{ asset('Details_Annonces_page/images/line.png') }}" alt="line" style="width: 60%;">
+                <p style="width: 80%; margin-bottom: 50px;">{{ annonce.styleGraphique}}
+                </p>
+            </div>
+            <div class="row " style="width: 100%; margin-bottom: 2em;">
+                <p style="margin-bottom: 20px;"> <img src="{{ asset('Details_Annonces_page/images/icones/examples.png') }}" alt="examples"> <b style="font-size: 18pt;color: black; margin-left: 10px;">Quelques idées en image !</b> </p>
+                <div class="row1">
+                    {% if annonce.imageannonce == null %}
+                    <div class="column pic">
+                        Aucune Image associé a l'annonce
+                    </div>
+                    {% endif %}
+
+                    {% if annonce.imageannonce != null %}
+                        {% for image in annonce.imageannonce %}
+                    <div class="column pic">
+                        <img src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/annonceimage/'~image.nonfich)  }}" style="height: 100px">
+                    </div>
+                        {% endfor %}
+                    {% endif %}
+                    <div class="column pic">
+                        <img src="{{ asset('Details_Annonces_page/images/book3.png') }}" style="width:100%">
+                        <div>
+                            <input type="file" id="file1" name="image" accept="image/*" capture="" style="display:none;" class="transparent">
+                            <img src="{{ asset('Details_Annonces_page/images/drop-here.png') }}" id="OpenImgUpload" style="width:100%; cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- second col -->
+        <div class="col-md-2" style="margin-bottom: 23em; transform: translateX(-1em); ">
+            <div class="center" style="padding-right: 0; ">
+                <p class="head"><b>Informations</b></p>
+                <div class="row d-inline" style="margin-top: 28px;">
+                    <div class="col-sm-1" style="margin-left: 5px">
+                        <img src="{{ asset('Details_Annonces_page/images/icones/pay.png') }}" alt="pay" style="width: 14px; height: 14px;">
+                    </div>
+                    <div class="col-sm-4 " style="width: 170px;">
+                        <p style="text-align:left;"> Dimensions & options:
+                            <ul>
+                                <li>
+                                     Lar : {{ annonce.largeur}}
+                                </li>
+
+                                 <li>
+                                     Long : {{ annonce.longeur}}
+                                 </li>
+                            {% if  annonce.rectoVerso==1 %}
+                                <li>
+                                    Recto-Verso
+                                </li>
+                            {% else %}
+                                <li>
+                                    Recto
+                                </li>
+                            {% endif %}
+
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="row d-inline" style="margin-top: 10px;">
+                    <div class="col-sm-1" style="margin-left: 5px">
+                        <img src="{{ asset('Details_Annonces_page/images/icones/send.png') }}" alt="pay" style="width: 14px; height: 14px;">
+                    </div>
+                    <div class="col-sm-4 " style="width: 170px;">
+                        <p style="text-align:left;"> Fichier à envoyer : <br/>  {{ annonce.typedoc}} </p>
+                    </div>
+                </div>
+                <div class="row d-inline" style="margin-top: 10px;">
+                    <div class="col-sm-1" style="margin-left: 5px">
+                        <img src="{{ asset('Details_Annonces_page/images/icones/deadline.png') }}" alt="deadline" style="width: 14px; height: 14px;">
+                    </div>
+                    <div class="col-sm-4 " style="width: 170px;">
+                        <p style="text-align:left; color:#ff0000"> <b>Deadline :</b> {{ annonce.delaiEnHeures }} Heures  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- third col -->
+        <div class="col-md-3" style="">
+            <div class="row d-inline">
+                <div class="center" style="padding: 0; height:500px;">
+                    <p style="margin-left:10px; margin-top:10px; color:#393a3d"> <b>Budget de l’annonce</b> </p>
+                    <p style="margin-left:10px;" class="budget">Budget: <span style="margin-left:130px; " class="budget1">{{ annonce.budget }} €</span> </p>
+                    <p style="margin-left:10px;" class="budget">Plus petit prix: <span style="margin-left:65px; color:#00b86b;" class="budget1">{{ annonce.budget }} €</span> </p>
+                    <hr class="style1">
+                    <p style="margin-left:10px; margin-top:10px; color:#393a3d"> <b>Dernière proposition</b> </p>
+                    <div class="center1" style="margin-top:20px; margin-bottom:20px;">
+                        {% if proposition!=null %}
+                            <p style="font-size:17pt; font-weight:bold;"> <b>{{ proposition.propositionPrix }}  €</b> </p>
+                            <p style="font-size:12px; transform: translateY(-10px);">{{ proposition.user.prenom }} - {{ proposition.dateTime }} </p>
+                        {% endif %}
+                        {% if proposition==null %}
+                            <p style="font-size:17pt; font-weight:bold;"> <b>Aucune proposition</b> </p>
+                        {% endif %}
+                    </div>
+                    {% if app.user.freelancer %}
+                    <hr class="style1">
+
+
+                    {{ form_start(form_prop) }}
+
+
+
+
+                    <div class="center2" style="margin-bottom: 20px;">
+                        <div class="center2"  style="color: #D8000C;background-color: #FFBABA; font-weight: bold;">
+                            {% if messageErreur != null %}
+                                {{ messageErreur }}
+                            {% endif %}
+                        </div>
+                        {{ form_row(form_prop.propositionPrix,{'attr': {'class': 'price'}}) }}
+                        <div class="btn-group" style="transform: translateX(-10px); ">
+
+                        </div>
+                    </div>
+
+                    <div class="center2">
+                        {{ form_row(form_prop.save,{'label' : "Proposer un prix", 'attr': {'class': 'prop'}}) }}
+                        <p style="transform: translateY(+4px);"> <b>ou</b> </p>
+                        <input type="button" name="" value="Projet Immédiat" class="prop" style="background-color:#076afd">
+                    </div>
+                    {{ form_end(form_prop) }}
+                    {% endif %}
+                </div>
+                <br>
+                <div class="center3" style="padding: 0; transform: translateY(+500px); ">
+                    <a href="{{ annonce.lienIN }}" target="_blank"><button type="button" name="button" class="social"> <b>Partagez sur LinkedIn</b> </button></a>
+                    <a href="{{ annonce.lienFB }}" target="_blank"><button type="button" name="button" class="social"> <b>Partagez sur Facebook</b> </button></a>
+                    <a href="{{ annonce.lienTW }}" target="_blank"><button type="button" name="button" class="social1"> <b>Partagez sur Twitter</b> </button></a>
+                </div>
+            </div>
+        </div>
+        <!--end of cols-->
+    </div>
+</div>
+<!-- /container -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+</script>
+
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+<script>
+    $('#OpenImgUpload').click(function() {
+        $('#file1').trigger('click');
+    });
+</script>
+</body>
+
+</html>

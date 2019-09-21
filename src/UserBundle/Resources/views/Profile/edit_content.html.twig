@@ -1,0 +1,1072 @@
+{#
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.username, { 'id': 'first'} ) }}
+        {{ form_row(form.email, { 'id': 'first'} ) }}
+        {{ form_row(form.current_password, { 'id': 'paswinp'} ) }}
+        {{ form_row(form.pays, { 'id': 'first'} ) }}
+        {{ form_row(form.ville, { 'id': 'first'} ) }}
+        {{ form_row(form.etat, { 'id': 'first'} ) }}
+        {{ form_row(form.telephone, { 'id': 'first'} ) }}
+        {{ form_row(form.codepostal, { 'id': 'first'} ) }}
+        {{ form_row(form.langues, { 'id': 'first'} ) }}
+        {{ form_row(form.brochure) }}
+        <div class="btn-submut">
+                <button type="submit" data-role="none">Valider</button>
+        </div>
+{{ form_end(form) }}
+#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>JOBID - Profile</title>
+        <!-- core CSS -->
+        <link href="{{ asset('Profile_template/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/owl.carousel.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/owl.transitions.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/prettyPhoto.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('Profile_template/css/responsive.css') }}" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="{{ asset('Profile_template/js/html5shiv.js') }}"></script>
+        <script src="{{ asset('Profile_template/js/respond.min.js') }}"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="{{ asset('Profile_template/images/ico/favicon.ico')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('Profile_template/images/ico/apple-touch-icon-144-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('Profile_template/images/ico/apple-touch-icon-114-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('Profile_template/images/ico/apple-touch-icon-72-precomposed.png')}}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('Profile_template/images/ico/apple-touch-icon-57-precomposed.png')}}">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+        <style type="text/css">
+
+
+        </style>
+</head><!--/head-->
+
+<body id="home" class="homepage" style="background-color: #eaf0f5">
+
+<header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner" style="height: 7.5em;">
+                <div class="container_header">
+                        <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style=" border: none; width: auto !important;">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="{{ path('fos_user_profile_show') }}"><img src="{{ asset('Profile_template/images/LOGO-JOBID.png') }}" alt="logo" style=" "></a>
+                        </div>
+
+                        <div class="collapse navbar-collapse navbar-right"  >
+                                <ul class="nav navbar-nav" style="    background-color: #f5f5f1;">
+                                        <li class="scroll"><a href="#home">Comment ça marche?</a></li>
+                                    {% if app.user.client %}
+                                            <li class="scroll"><a href="{{ path('listeannonce') }}">Mes Annonces</a></li>
+                                    {% else %}
+                                            <li class="scroll"><a href="{{ path('show_annonces') }}">Annonces</a></li>
+                                    {% endif %}
+
+                                        <div class="dropdown">
+                                                <button class="dropbtn" style="max-width: 200px;max-height: 200px">
+                                                    {% if app.user.brochure == null %}
+                                                            <img id="resize" style="max-width: 130px;max-height: 150px;width: 35%;display: inline-block;" class="img-circle" src="{{ asset('profile/img/avatar/default.png')   }}" alt="" style="width: 35%;display: inline-block;">
+                                                    {% else %}
+                                                            <img id="resize" style="max-width: 200px;max-height: 200px" class="img-circle" src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure) }}" alt="" style="width: 35%;display: inline-block;">
+                                                    {% endif %}
+                                                        Profile
+                                                </button>
+                                                <div class="dropdown-content" style="min-width: 180px;">
+
+                                                        <h2 style="font-size: 1em; color: #076afd;padding-left: 20px;">
+                                                            {% if app.user.brochure == null %}
+                                                                    <img id="resize" class="img-circle" src="{{ asset('profile/img/avatar/default.png') }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; ">
+                                                            {% else %}
+
+                                                                    <img id="resize" class="img-circle" src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure) }}" alt="" style="width: 20%;display: inline-block;margin-right: 20px; ">
+                                                            {% endif %}
+                                                                <br>
+                                                            {{ app.user.username }}
+                                                        </h2>
+
+                                                        <p style="margin-left: 30px !important; margin-top: -15px;border-bottom: 2px solid #076afd;width: 5%;">
+                                                            {% if app.user.freelancer == true %}
+                                                                    Freelancer
+                                                            {% else %}
+                                                                    Client
+                                                            {% endif %}
+                                                        </p>
+                                                        <div class="wrapper">
+                                                                <button class="btn btn-primary btn-lg">REGLAGES PROFILE</button></div>
+                                                        <div class="wrapper">  <button class="btn btn-primary btn-lg">  TABLEAU DE BOARD</button></div>
+                                                        <a href="#" ><img src="{{ asset('Profile_template/images/icones/icone4.png') }}" alt="" class="icone_menu" >Paramètres</a>
+                                                        <a href="{{ path('fos_user_security_logout') }}" style="margin-bottom: 5px;"><img src="{{ asset('Profile_template/images/icones/icone4.png') }}" alt="" class="icone_menu" > Déconnexion</a>
+                                                </div>
+                                        </div>
+
+                                </ul>
+                        </div>
+                </div><!--/.container-->
+        </nav><!--/nav-->
+</header><!--/header-->
+
+
+
+<div class="margin" style="width: 80%;">
+        <div class="row d-inline margin-right" style="width: 100%;">
+                <div class="sidenav" style="width: 20%;">
+                        <div>
+                                <a href="#about"><img src="{{ asset('Profile_template/images/icones/icone2.png') }}" alt="Informations" class="icone_menu">Informations</a>
+                        </div>
+                        <div> <a href="#securite"><img src="{{ asset('Profile_template/images/icones/icone1.png') }}" alt="" class="icone_menu">Mode de payement</a> </div>
+                        <div> <a href="{{ path('fos_user_change_password') }}"><img src="{{ asset('Profile_template/images/icones/icone3.png') }}" alt="" class="icone_menu">Sécurité</a></div>
+                        <div> <a href="#contact"><img src="{{ asset('Profile_template/images/icones/icone4.png') }}" alt="" class="icone_menu">Notifications</a></div>
+                </div>
+                <section class="compte" id="compte" style="width: 50%;">
+                        <div class="container col-lg-12 col-md-12">
+                                <div class="row">
+                                        <div class="col-md-12 col-sm-4">
+                                                <div class="header-compte">
+                                                        <h1 style="display: inline-block;">COMPTE</h1>
+
+                                                        <button class="icone-right" style="">
+
+                                                                <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu">
+                                                                </a>
+                                                        </button>
+
+                                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+                                                    {{ form_start(form) }}
+                                                    {% if app.user.brochure == null or app.user.brochure is same as('Profile/img/avatar/default.png') %}
+                                                            <img id="resize" style="max-width: 200px;max-height: 200px" class="img-circle" src="{{ asset('profile/img/avatar/default.png')  }}" alt="">
+                                                    {% else %}
+                                                            <img id="resize" style="max-width: 200px;max-height: 200px" class="img-circle" src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/images/'~app.user.brochure)  }}" alt="">
+                                                    {% endif %}
+
+
+
+                                                     <img src="{{ asset('Profile_template/images/icones/change_image.png') }}" id="upfile1" style="cursor:pointer" />
+
+
+                                                    {{ form_row(form.brochure,{'label' : false, 'attr': {'class': 'image-profile-uploader'}},{'id':'input_img'}) }}
+
+
+
+                                                        </p>
+
+                                                        <div class="m-l-20" >
+                                                                <div class="col-md-6 col-sm-4 ">
+                                                                    {{ form_row(form.nom,{'label' : "nom", 'attr': {'class': 'row-width'},'id':'edit'} ) }}
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-4 ">
+                                                                    {{ form_row(form.prenom,{'label' : "prenom", 'attr': {'class': 'row-width'},'id':'edit'} ) }}
+                                                                </div>
+                                                                <!--div class="col-md-12 col-sm-6 ">
+                                                                    {#{ form_row(form.username,{'id':'edit'} ) }#}
+                                                                </div-->
+                                                                <div class="col-md-12 col-sm-6 ">
+                                                                    {{ form_row(form.email,{'label' : "e-mail", 'attr': {'class': 'row-width'},'id':'edit'} ) }}
+                                                                </div>
+                                                                <div class="col-md-12 col-sm-6" >
+                                                                    {{ form_row(form.telephone,{'label' : "telephone", 'attr': {'class': 'row-width'},'id':'edit' }) }}
+                                                                </div>
+
+                                                                <!--div class="col-md-12 col-sm-6" style="padding-bottom: 5%;">
+                                                                        {#{ form_row(form.current_password, { 'id': 'paswinp'} ) }#}
+                                                                </div-->
+                                                                <button type="submit" class="btn-submut" style="background-color: #0379f9;width: 4em;margin-left: 40%;color: white;">Save</button>
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+        </div>
+
+
+        <section class="localisation" id="localisation">
+                <div class="container col-lg-12 col-md-12">
+                        <div class="row d-inline">
+                                <div class="col-sm-12">
+                                        <div class="header-compte">
+                                                <h1 style="display: inline-block;">LOCALISATION</h1>
+
+                                                <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+                                                <div class="m-l-20">
+                                                        <div class="col-sm-12 space"><h4>Pays</h4></div>
+                                                        <div class="col-sm-12 space">
+                                                            {{ form_row(form.pays,{'label':false},{'id':'email'},{'attr': {'class': 'pays'} }) }}
+                                                        </div>
+                                                        <div class="col-sm-12 space"><h4>Etat</h4></div>
+                                                        <div class="col-sm-12 space">
+                                                            {{ form_row(form.etat,{'label':false},{'id':'numero'} )   }}
+                                                        </div>
+                                                        <div class="col-sm-12 space"><h4>Code postal</h4></div>
+                                                        <div class="col-sm-12 space">
+                                                            {{ form_row(form.codepostal,{'label':false},{'id':'numero'} )   }}
+                                                        </div>
+                                                        <button type="submit" class="btn-submut" style="background-color: #0379f9;width: 4em;margin-left: 40%;color: white;">Save</button>
+
+
+
+
+
+                                                </div>
+
+                                                    {{ form_end(form) }}
+
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <section class="description" id="description">
+                <div class="container col-lg-12 col-md-12">
+                        <div class="row d-inline">
+                                <div class="col-sm-12">
+                                        <div class="header-compte">
+                                                <h1 style="display: inline-block;">DESCRIPTION</h1>
+                                                <button id="opendescription"  class="icone-right" style="">
+                                                        <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu">
+                                                </button>
+                                                <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+                                                <div class="" style="margin-left: 3%;">
+                                                        <div class="col-sm-12 space"style="padding-bottom: 4%;">
+                                                                {% if app.user.description == null %}
+                                                                        <p class="col-sm-12">
+                                                                                Aucune description.
+                                                                        </p>
+                                                                {% endif %}
+
+                                                                {% if app.user.description != null %}
+                                                                        <p class="col-sm-12">
+                                                                                {{ app.user.description }}
+                                                                        </p>
+                                                                {% endif %}
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <div class="" id=""  style="">
+
+
+            {% if app.user.freelancer == true %}
+                <section class="experiences" id="expdisplay">
+                        <div class="container col-lg-12 col-md-12">
+                                <div class="row d-inline">
+                                        <div class="col-sm-12">
+                                                <div class="header-compte"><h1 style="display: inline-block;">EXPERIENCES</h1><button id="OpenExperience"  class="icone-right" style="">
+                                                                <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu"></button>
+                                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+                                                    {% if experiences == null %}
+                                                        <div class="m-l-20">
+                                                                <div class="col-sm-12 space"><h4 style="color: #0f7ff9">Aucune experience</h4></div>
+
+                                                                <div class="col-sm-12 space"><h5 style="color: #076afd"></h5></div>
+                                                                <div class="col-sm-12 space"><h6>Aucune experience</h6></div>
+
+                                                                <div class="col-sm-12 space">
+                                                                        <p class="col-sm-12"style="border-bottom: 0.1em solid #d7d7d7;width: 95%;border-spacing: 15px 50px;">Aucune experience
+
+                                                                        </p>
+                                                                </div>
+                                                            {% endif %}
+                                                            {% if experiences != null %}
+                                                                {% for experience in experiences %}
+
+                                                                        <div class="m-l-20">
+
+
+
+
+                                                                                <div class="col-sm-12">
+
+                                                                                <div class="col-sm-8 space" style="display: inline-block;"><h4 style="color: #0f7ff9;display: inline-block;margin-left: -7%;">{{ experience.titre }}</h4>
+
+                                                                                                </div>
+                                                                                <div class="col-sm-2 space" style="display: inline-block;" id="delete_exp">
+
+                                                                                        <a  experience-id="{{ experience.id }}" href="{{ path('delete_experience', {'id': experience.id}) }}">
+                                                                                                <img src="{{ asset('images/delete.png') }}" alt="" class="icone_menu" style="padding-left: 280%;">
+                                                                                        </a>
+                                                                                </div>
+                                                                        </div>
+                                                                            {#    <script>
+                                                                                    var swaldelete = document.getElementById('delete_exp');
+                                                                                    swaldelete.onclick = function() {
+                                                                                        var pid = $(this).attr("experience-id");
+
+                                                                                        swal({
+                                                                                            title: "Are you sure?",
+                                                                                            text: "Once deleted, you will not be able to recover this imaginary file!",
+                                                                                            icon: "warning",
+                                                                                            buttons: true,
+                                                                                            dangerMode: true,
+                                                                                        })
+                                                                                            .then((willDelete) => {
+                                                                                                if (willDelete) {
+                                                                                                    //  var url = '';
+                                                                                                    url = '{{path('delete_experience', { 'id': 0}) }}';
+                                                                                                    url = url.replace("0",pid);
+                                                                                                    $.ajax({
+                                                                                                        url: url,
+                                                                                                        type: 'delete',
+                                                                                                        success: function(result) {
+                                                                                                            console.log('Delete');
+
+                                                                                                        },
+                                                                                                        error: function(e){
+                                                                                                            console.log(e.responseText);
+
+
+                                                                                                        }
+
+                                                                                                    });
+
+                                                                                                    swal("Poof! Your imaginary file has been deleted!", {
+                                                                                                        icon: "success",
+                                                                                                    });
+
+
+
+                                                                                                }
+                                                                                                else {
+                                                                                                    swal("experience not deleted");
+                                                                                                }
+                                                                                            });
+                                                                                    }
+                                                                                </script>#}
+
+                                                                                <div class="col-sm-12 space"><h5 style="color: #076afd"></h5></div>
+                                                                                <div class="col-sm-12 space"><h6>debuté le :{{ experience.datedebut|date('Y-m-d') }}  fini le : {{ experience.datefin|date('Y-m-d') }}</h6></div>
+
+                                                                                <div class="col-sm-12 space">
+                                                                                        <p class="col-sm-12"style="border-bottom: 0.1em solid #d7d7d7;width: 95%;border-spacing: 15px 50px;">{{ experience.details }}
+
+                                                                                        </p>
+                                                                                </div>
+
+
+
+                                                                        </div>
+
+                                                                {% endfor%}
+                                                            {% endif %}
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        </div>
+                </section>
+                <section class="formation" id="formatdisplay">
+                        <div class="container col-lg-12 col-md-12">
+                                <div class="row row-centered pos">
+                                        <div class="col-sm-12">
+                                                <div class="header-compte"><h1 style="display: inline-block;">
+                                                                FORMATION</h1>
+                                                        <button id="OpenEducation" class="icone-right" style="">
+                                                                <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu"></button> <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+
+                                                    {% if formations == null %}
+                                                            <div class="m-l-20">
+                                                                    <div class="col-sm-12 space col-centered"><h4>Aucune formation</h4></div>
+
+                                                                    <div class="col-sm-12 space col-centered"><h5 style="color: #076afd">Aucun groupe</h5></div>
+                                                                    <div class="col-sm-12 space col-centered"><h6></h6></div>
+
+                                                                    <div class="col-sm-12 space" style="border-bottom: 0.1em solid #d7d7d7;width: 95%;border-spacing: 15px 50px;">
+                                                                            <p class="col-sm-12">Aucune formation
+
+                                                                            </p>
+                                                                    </div>
+
+
+
+                                                            </div>
+                                                    {% endif %}
+
+                                                    {% if formations != null %}
+                                                        {% for formation in formations %}
+                                                                <div class="m-l-20">
+                                                                        <div class="col-sm-12">
+                                                                                <div class="col-md-6 space" style="display: inline-block;"><h4 style="color: #0f7ff9;display: inline-block;margin-left: -7%;"> {{ formation.titre }}</h4>
+                                                                                </div>
+                                                                                <div class="col-md-2 space" style="display: inline-block;">
+                                                                                        <a href="{{ path('delete_formation', {'id': formation.id}) }}">
+                                                                                                <img src="{{ asset('images/delete.png') }}" alt="" class="icone_menu" style="padding-left: 450%;">
+                                                                                        </a>
+                                                                                </div>
+                                                                                </div>
+
+                                                                        <div class="col-sm-12 space"><h5 style="color: #076afd">{{ formation.groupe }}</h5></div>
+                                                                        <div class="col-sm-12 space"><h6> a debuté le : ~ {{ formation.datedebut|date('Y-m-d') }} terminé le : {{ formation.datefin|date('Y-m-d') }}</h6></div>
+
+                                                                        <div class="col-sm-12 space" style="padding-bottom: 4%;">
+                                                                                <p class="col-sm-12">{{ formation.details }}
+
+                                                                                </p>
+                                                                        </div>
+                                                                </div>
+
+                                                        {% endfor %}
+                                                    {% endif %}
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                {% if app.user.freelancer == true %}
+                    <section class="formation" id="portfoliodisplay">
+                            <div class="container col-lg-12 col-md-12">
+                                    <div class="row d-inline">
+                                            <div class="col-sm-12">
+                                                    <div class="header-compte"><h1 style="display: inline-block;">Portfolio</h1><button class="icone-right" id="openportfolio" style=""> <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu"></button>
+                                                            <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+                                                        {% if portfolios == null %}
+                                                            <div class="m-l-20">
+
+                                                                    <div class="col-md-5 col-sm-4">
+                                                                            <input class="form-control" type="text" name="" placeholder="Porfolio vide" id="langue" disabled>
+                                                                    </div>
+                                                                {% endif %}
+
+                                                            </div>
+                                                        {% if portfolios !=null %}
+
+                                                                   {# <div class="m-l-20">
+                                                                            <div class="m-l-20" >
+                                                                                    <div class="col-md-6 col-sm-4 ">
+
+                                                                                    </div>
+
+                                                                            </div>
+#}
+                                                                            <div class="container-image-portfolio" >
+                                                                                {% for portfolio in portfolios %}
+
+                                                                                    <div id='parent_div_1'>
+                                                                                            <div class ='child_div_1'>
+                                                                                                    <img src="{{ asset('uploads/brochures/'~app.user.id~'user/publications/logos/'~portfolio.imagelogo) }}" style="height: 100px">
+                                                                                            </div>
+
+                                                                                            <a href="{{ path('delete_portfolio', {'id': portfolio.id}) }}">
+                                                                                                    <img src="{{ asset('images/delete.png') }}" >
+                                                                                            </a>
+                                                                                            </div>
+
+                                                                                {% endfor %}
+
+                                                                            </div>
+
+
+
+
+                                                        {% endif %}
+
+                                                    </div>
+
+
+                                                    </div>
+                                            </div>
+                                    </div>
+
+
+                    </section>
+    {% endif %}
+
+                <section class="competences  competences1" id="competencedisplay">
+                        <div class="container col-lg-12 col-md-12">
+                                <div class="row d-inline">
+                                        <div class="col-sm-12">
+                                             <div class="header-compte"><h1 style="display: inline-block;">COMPETENCES</h1><button class="icone-right" id="Opencompetences" style=""> <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu"></button> <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+
+                                                        <div class="m-l-20">
+                                                                {% if competences ==null %}
+                                                                <div class="col-sm-5">
+
+                                                                        <input class="form-control" type="text" name="" placeholder="Aucune Competence" id="competence" disabled="">
+                                                                </div>
+                                                                {% endif %}
+                                                            {% if competences !=null %}
+                                                                {% for competence in competences %}
+                                                                        <div class="col-sm-6">
+                                                                                <div class="col-sm-10">
+
+                                                                                        <input class="form-control" type="text" name="" placeholder="{{ competence.nomcompetence }}" id="competence" >
+
+                                                                                </div>
+                                                                                <div class="col-sm-2" style="margin-top: 9%;">
+                                                                                        <a href="{{ path('delete_competence', {'id': competence.id}) }}">
+                                                                                                <img src="{{ asset('images/delete.png') }}" >
+                                                                                        </a>
+                                                                                </div>
+                                                                        </div>
+                                                                {% endfor %}
+                                                            {% endif %}
+                                                        </div>
+
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                {% endif %}
+                <section class="langues" id="languedisplay" >
+                        <div class="container col-lg-12 col-md-12">
+                                <div class="row d-inline">
+                                        <div class="col-sm-12">
+                                                <div class="header-compte"><h1 style="display: inline-block;">LANGUES</h1><button class="icone-right" id="openlangues" style=""> <img src="{{ asset('Profile_template/images/icones/boutton.png') }}" alt="" class="icone_menu"></button>
+                                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle">
+                                                        {% if langues == null %}
+                                                        <div class="m-l-20">
+
+                                                                <div class="col-md-5 col-sm-4">
+                                                                        <input class="form-control" type="text" name="" placeholder="Aucune langue" id="langue" >
+                                                                </div>
+                                                                {% endif %}
+
+                                                        </div>
+                                                        {% if langues !=null %}
+                                                                {% for langue in langues %}
+                                                                        <div class="col-sm-6">
+
+                                                                                <div class="col-sm-10">
+
+                                                                                        <input class="form-control" type="text" name="" placeholder="{{ langue.nomlangue }}" id="competence">
+
+                                                                                </div>
+
+                                                                                <div class="col-sm-2" style="margin-top: 9%;">
+                                                                                        <a href="{{ path('delete_langue', {'id': langue.id}) }}">
+                                                                                                <img src="{{ asset('images/delete.png') }}" alt="" class="icone_menu">
+                                                                                        </a>
+                                                                                </div>
+
+
+
+
+                                                                        </div>
+                                                                {% endfor %}
+
+                                                        {% endif %}
+
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+        </div>
+</div>
+
+<footer id="footer">
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-6">
+
+                        </div>
+                        <div class="col-sm-6">
+                                <ul class="social-icons">
+                                        <!--  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                          <li><a href="#"><i class="fa fa-github"></i></a></li>  -->
+                                </ul>
+                        </div>
+                </div>
+        </div>
+</footer>
+<div id="myModal" class="modal"  style="display: none"  >
+
+
+        <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="">
+                        <div class="row">
+                                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 10%;">Ajouter une formation </h4>
+
+                                    {{ form_start(form_formation) }}
+                                    {{ form_row(form_formation.titre,{'label' : "domaine de formation", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_formation.groupe,{'label' : "établissement", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_formation.details,{'label' : "details", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_formation.datedebut,{'label' : "date debut", 'attr': {'class': 'input-date-row'}}) }}
+                                    {{ form_row(form_formation.datefin,{'label' : "date fin", 'attr': {'class': 'input-date-row'}}) }}
+                                    {{ form_row(form_formation.save,{'label' : "save", 'attr': {'class': 'input-button-row'}}) }}
+                                    {{ form_end(form_formation) }}
+
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
+
+<!-- form for the portfolio -->
+<div id="myportfolio" class="modal"  style="display: none"  >
+
+
+        <div class="modal-content">
+                <span class="closeportfolio close">&times;</span>
+                <div class="">
+                        <div class="row">
+                                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 10%;">Ajouter logo pour portfolio </h4>
+
+                                    {{ form_start(form_portfolio) }}
+                                    {{ form_row(form_portfolio.nomlogo,{'label' : "titre logo", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_portfolio.imagelogo,{'label' : "logo", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_portfolio.save,{'label' : "save", 'attr': {'class': 'input-button-row'}}) }}
+                                    {{ form_end(form_portfolio) }}
+
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
+
+
+{% if app.user.freelancer == true %}
+<div id="myExperience" class="modal" style="display: none" >
+
+        <!-- Modal content -->
+        <div class="modal-content">
+                <span class="closeExp">&times;</span>
+                <div class="">
+                        <div class="row">
+                                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 10%;">Ajouter une éxpérience </h4>
+                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle" style="padding-left: 10%;">
+
+                                    {{ form_start(form_exp) }}
+                                    {{ form_row(form_exp.titre,{'label' : "poste occupé", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_exp.details,{'label' : "details du poste", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_exp.datedebut,{'label' : "date debut", 'attr': {'class': 'input-date-row'}}) }}
+                                    {{ form_row(form_exp.datefin,{'label' : "date fin", 'attr': {'class': 'input-date-row'}}) }}
+                                    {{ form_row(form_exp.save,{'label' : "save", 'attr': {'class': 'input-button-row'}}) }}
+                                    {{ form_end(form_exp) }}
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
+{% endif %}
+
+
+<div id="modal-description" class="modal" style="display: none;">
+
+        <!-- Modal content -->
+
+        <div class="modal-content">
+                <span class="closedescription">&times;</span>
+                <div class="" style="margin-left: 10%;">
+                        <div class="row"style="margin-right: 10%">
+                                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 3%;">Ajouter une description </h4>
+                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle" style="padding-left: 3%;">
+                                        <div class="col-md-10 col-sm-4 ">
+                                            {{ form_start(form_description) }}
+                                            {{ form_row(form_description.details_description,{'label' : "description du profile", 'attr': {'class': 'input-text-row'}}) }}
+                                            {{ form_row(form_description.save,{'label' : "save", 'attr': {'class': 'input-button-row'}}) }}
+                                                {{ form_end(form_description) }}
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+
+
+<div id="mescompetences" class="modal"  style="display: none;" >
+
+        <!-- Modal content -->
+        <div class="modal-content">
+                <span class="closecompetences">&times;</span>
+                <div class="">
+                        <div class="row">
+                                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 10%;">Nouvelle Competence </h4>
+                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle" style="padding-left: 10%;">
+                                    {{ form_start(form_competences) }}
+                                    {{ form_row(form_competences.nomcompetence,{'label' : "domaine de competence", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_competences.save,{'label' : "save", 'attr': {'class': 'input-button-row'}}) }}
+                                    {{ form_end(form_competences) }}
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
+
+
+
+<div id="meslangues" class="modal" style="display: none" >
+
+        <!-- Modal content -->
+        <div class="modal-content">
+                <span class="closelangues">&times;</span>
+                <div class="">
+                        <div class="row">
+                                <div class="col-md-12 col-sm-4"><h4 style="padding-left: 10%;">Nouvelle Langue </h4>
+                                        <img src="{{ asset('Profile_template/images/icones/rectangle.png') }}" alt="" class="rectangle" style="padding-left: 10%;">
+
+                                    {{ form_start(form_langues) }}
+                                    {{ form_row(form_langues.nomlangue,{'label' : "Langue", 'attr': {'class': 'input-text-row'}}) }}
+                                    {{ form_row(form_langues.save,{'label' : "save", 'attr': {'class': 'input-button-row'}}) }}
+                                    {{ form_end(form_langues) }}
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
+
+
+
+<script src="{{ asset('Profile_template/js/jquery.js') }}"></script>
+<script src="{{ asset('Profile_template/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('Profile_template/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('Profile_template/js/mousescroll.js') }}"></script>
+<script src="{{ asset('Profile_template/js/smoothscroll.js') }}"></script>
+<script src="{{ asset('Profile_template/js/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('Profile_template/js/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('Profile_template/js/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('Profile_template/js/wow.min.js') }}"></script>
+<script src="{{ asset('Profile_template/js/main.js') }}"></script>
+<script src="{{ asset('fos/js/Sweet.js') }}"></script>
+<script type="text/javascript">
+
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("OpenEducation");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+
+    var modalDesc = document.getElementById('modal-description');
+
+    // Get the button that opens the modal
+    var btndescription = document.getElementById("opendescription");
+
+    // Get the <span> element that closes the modal
+    var spandescription = document.getElementsByClassName("closedescription")[0];
+
+    // When the user clicks on the button, open the modal
+    btndescription.onclick = function() {
+        modalDesc.style.display = "block";
+
+
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    spandescription.onclick = function() {
+        modalDesc.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modalDesc.style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+
+    var modalExp = document.getElementById('myExperience');
+
+    // Get the button that opens the modal
+    var btnExp = document.getElementById("OpenExperience");
+
+    // Get the <span> element that closes the modal
+    var spanExp = document.getElementsByClassName("closeExp")[0];
+
+    // When the user clicks on the button, open the modal
+    btnExp.onclick = function() {
+        modalExp.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    spanExp.onclick = function() {
+        modalExp.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalExp) {
+            modalExp.style.display = "none";
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+
+    var modalcompetences = document.getElementById('mescompetences');
+
+
+    // Get the button that opens the modal
+    var btncompetences = document.getElementById("Opencompetences");
+
+    // Get the <span> element that closes the modal
+    var spancompetences = document.getElementsByClassName("closecompetences")[0];
+
+    // When the user clicks on the button, open the modal
+        btncompetences.onclick = function() {
+        modalcompetences.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    spancompetences.onclick = function() {
+        modalcompetences.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalcompetences) {
+            modalcompetences.style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+
+    var modallangues = document.getElementById('meslangues');
+
+
+    // Get the button that opens the modal
+    var btnlangues = document.getElementById("openlangues");
+
+    // Get the <span> element that closes the modal
+    var spanlangues = document.getElementsByClassName("closelangues")[0];
+
+    // When the user clicks on the button, open the modal
+    btnlangues.onclick = function() {
+        modallangues.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    spanlangues.onclick = function() {
+        modallangues.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modallangues) {
+            modallangues.style.display = "none";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+
+    var modalportfolio = document.getElementById('myportfolio');
+
+    // Get the button that opens the modal
+    var btnportfolio = document.getElementById("openportfolio");
+
+    // Get the <span> element that closes the modal
+    var spanportfolio = document.getElementsByClassName("closeportfolio")[0];
+
+    // When the user clicks on the button, open the modal
+    btnportfolio.onclick = function() {
+        modalportfolio.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    spanportfolio.onclick = function() {
+        modalportfolio.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalportfolio) {
+            modalportfolio.style.display = "none";
+        }
+    }
+</script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $(".showonhover").click(function(){
+            $("#selectfile").trigger('click');
+        });
+    });
+
+
+    var input = document.querySelector('input[type=file]'); // see Example 4
+
+    input.onchange = function () {
+        var file = input.files[0];
+
+        drawOnCanvas(file);   // see Example 6
+        displayAsImage(file); // see Example 7
+    };
+
+    function drawOnCanvas(file) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var dataURL = e.target.result,
+                c = document.querySelector('canvas'), // see Example 4
+                ctx = c.getContext('2d'),
+                img = new Image();
+
+            img.onload = function() {
+                c.width = img.width;
+                c.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
+
+            img.src = dataURL;
+        };
+
+        reader.readAsDataURL(file);
+    }
+
+    function displayAsImage(file) {
+        var imgURL = URL.createObjectURL(file),
+            img = document.createElement('img');
+
+        img.onload = function() {
+            URL.revokeObjectURL(imgURL);
+        };
+
+        img.src = imgURL;
+        document.body.appendChild(img);
+    }
+
+    $("#upfile1").click(function () {
+        $("#fos_user_profile_form_brochure").trigger('click');
+    });
+    $("#upfile2").click(function () {
+        $("#file2").trigger('click');
+    });
+    $("#upfile3").click(function () {
+        $("#file3").trigger('click');
+    });
+/*
+    $(function(){
+
+        var tab = window.location.href.split('#')[1]; // tab-1
+        if(tab){
+            $('body').addClass( tab );
+            alert(tab);
+        }
+
+    });
+*/
+
+
+
+
+    fileReader.onload = function (event) {
+        var image = new Image();
+
+        image.onload=function(){
+            document.getElementById("resize").src=image.src;
+            var canvas=document.createElement("canvas");
+            var context=canvas.getContext("2d");
+            canvas.width=150;
+            canvas.height=150;
+            //canvas.width=image.width/4;
+            //canvas.height=image.height/4;
+            context.drawImage(image,
+                0,
+                0,
+                image.width,
+                image.height,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+        }
+        image.src=event.target.result;
+    };
+</script>
+
+
+<script>
+
+    var url = window.location.href.split('#')[1];
+    if (url=='expdisplay') {
+        modalExp.style.display = "block";
+
+    }
+    else if (url=='description')
+    {
+        modalDesc.style.display = "block";
+    }
+    else if (url=='formatdisplay')
+    {
+        modal.style.display = "block";
+    }
+    else if (url=='portfoliodisplay')
+    {
+        modalportfolio.style.display = "block";
+    }
+    else if (url=='competencedisplay')
+    {
+        modalcompetences.style.display = "block";
+    }
+    else if (url=='languedisplay')
+    {
+        modallangues.style.display = "block";
+    }
+</script>
+
+
+</body>
+</html>
